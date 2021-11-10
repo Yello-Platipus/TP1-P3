@@ -2,6 +2,8 @@ package todo;
 
 public class Grenade extends GameObject{
 
+    static String INFO = "[GRENADE] Explodes in 3 cycles, harming everyone around\n";
+
     public Grenade(Game game, int x, int y) {
         super(game, x, y);
     }
@@ -17,7 +19,7 @@ public class Grenade extends GameObject{
     }
 
     @Override
-    public boolean receiveShoot() {
+    public boolean receiveShot() {
         return false;
     }
 

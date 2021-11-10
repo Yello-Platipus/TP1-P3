@@ -115,9 +115,11 @@ public class Game {
 	public void deleteDeadObjects(){
 		container.deleteDeadObjects();
 	}
-
 	public GameObject getObjectInPos(int x, int y){
 		return container.getObjectInPos(x, y);
+	}
+	public void forceAddObject(GameObject o) {
+		container.forceAddObject(o);
 	}
 
 	public void reset(long seed, Level level){
@@ -133,11 +135,9 @@ public class Game {
 		GameObjectGenerator.generateGameObjects(this, level);
 	}
 
-	public void execute(InstantAction action){
-
+	public void executeInstantAction(InstantAction action){
+		action.execute(this);
 	}
 
-    public void forceAddObject(GameObject o) {
-		container.forceAddObject(o);
-    }
+	
 }

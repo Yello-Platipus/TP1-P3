@@ -2,6 +2,8 @@ package todo;
 
 public class Pedestrian extends GameObject{
 
+    static String INFO = "[PEDESTRIAN] person crossing the road up and down\n";
+
     public Pedestrian(Game game, int x, int y) {
         super(game, x, y);
     }
@@ -17,7 +19,7 @@ public class Pedestrian extends GameObject{
     }
 
     @Override
-    public boolean receiveShoot() {
+    public boolean receiveShot() {
         return false;
     }
 

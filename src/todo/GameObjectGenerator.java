@@ -24,7 +24,7 @@ public class GameObjectGenerator {
 
 	public static void generateRuntimeObjects(Game game) {
 		if (game.getLevel().hasAdvancedObjects()) {
-			game.execute(new Thunder());
+			game.executeInstantAction(new Thunder());
 		}
 	}
 

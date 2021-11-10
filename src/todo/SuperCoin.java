@@ -4,7 +4,7 @@ public class SuperCoin extends GameObject{
 
     private static int numSuperCoins = 0;
     private final int value;
-    static String INFO = "[Coin] gives 1 coin to the player\n"; // TODO
+    static String INFO = "[SUPERCOIN] gives 1000 coins\n"; // TODO
 
     public SuperCoin(Game game, int x, int y){
         super(game, x, y);
@@ -31,7 +31,7 @@ public class SuperCoin extends GameObject{
     }
 
     @Override
-    public boolean receiveShoot() {
+    public boolean receiveShot() {
         return false;
     }
 

@@ -2,6 +2,8 @@ package todo;
 
 public class Truck extends GameObject{
 
+    static String INFO = "[TRUCK] moves towards the player\n";
+
     public Truck(Game game, int x, int y) {
         super(game, x, y);
     }
@@ -17,7 +19,7 @@ public class Truck extends GameObject{
     }
 
     @Override
-    public boolean receiveShoot() {
+    public boolean receiveShot() {
         return false;
     }
 

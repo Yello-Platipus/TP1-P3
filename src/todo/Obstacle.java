@@ -30,7 +30,7 @@ public class Obstacle extends GameObject{
 	}
 
 	@Override
-	public boolean receiveShoot() { // TODO
+	public boolean receiveShot() { // TODO
 		return false;
 	}
 

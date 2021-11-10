@@ -66,7 +66,7 @@ public class Player extends GameObject{
 	}
 
 	@Override
-	public boolean receiveShoot() {
+	public boolean receiveShot() {
 		return false;
 	}
 
