@@ -16,11 +16,7 @@ public class InfoCommand extends Command {
 
 	@Override
 	public boolean execute(Game game) {
-		StringBuilder str = new StringBuilder("Available objects:\n");
-		str.append(Player.INFO);
-		str.append(Coin.INFO);
-		str.append(Obstacle.INFO);
-		System.out.print(str.toString());
+		GamePrinter.printGameInfo();
 		return false;
 	}
 

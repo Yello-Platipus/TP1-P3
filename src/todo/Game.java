@@ -112,7 +112,9 @@ public class Game {
 			container.addObject(object);
 	}
 
-	public void deleteDeadObjects(){container.deleteDeadObjects();}
+	public void deleteDeadObjects(){
+		container.deleteDeadObjects();
+	}
 
 	public GameObject getObjectInPos(int x, int y){
 		return container.getObjectInPos(x, y);
