@@ -55,7 +55,7 @@ public class Wall extends GameObject{
 
     @Override
     public void onDelete() {
-
+        game.receivePrize(coinsOnDestroy);
         numWalls--;
         numObjects--;
     }

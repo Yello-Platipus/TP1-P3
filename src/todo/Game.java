@@ -83,6 +83,9 @@ public class Game {
 		addCycles(1);
 		deleteDeadObjects();
 	}
+	public void receivePrize(int prize){
+		player.addCoin(prize);
+	}
 
 	public String positionToString(int x, int y){
 		String icono = "";
@@ -139,5 +142,8 @@ public class Game {
 		action.execute(this);
 	}
 
-	
+
+	public void forceAdvanceObject(int command) {
+		GameObjectGenerator.forceAdvanceObject(this, command, getRandomLane());
+	}
 }
