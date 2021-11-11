@@ -1,6 +1,6 @@
 package todo;
 
-public class ShootCommand extends Command{
+public class ShootCommand extends Command implements Buyable{
 
     private static final String NAME = "shoot a bullet";
 
@@ -20,12 +20,17 @@ public class ShootCommand extends Command{
     public boolean execute(Game game) {
         boolean canShoot = game.getNumCoins() > 0;
         if(canShoot){
-            game.useCoins(coinUsage);
+            buy(game);
             game.executeInstantAction(new Shot());
             game.update();
         }
         else
             System.out.println("Not enough coins");
         return canShoot;
+    }
+
+    @Override
+    public int cost() {
+        return coinUsage;
     }
 }

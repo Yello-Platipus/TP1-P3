@@ -89,9 +89,6 @@ public class Game {
 	public void receivePrize(int prize){
 		player.addCoin(prize);
 	}
-	public void useCoins(int numCoins){
-		player.addCoin(-numCoins);
-	}
 
 	public String positionToString(int x, int y){
 		String icono = "";
@@ -128,7 +125,9 @@ public class Game {
 		return container.getObjectInPos(x, y);
 	}
 	public void forceAddObject(GameObject o) {
-		container.forceAddObject(o);
+		container.clearRow(o.getX());
+		container.deleteDeadObjects();
+		container.addObject(o);
 	}
 
 	public void reset(long seed, Level level){
@@ -154,5 +153,9 @@ public class Game {
 
 	public void clearSeenObjects() {
 		container.clearSeenObjects(getXPlayer(), getXPlayer() + getVisibility());
+	}
+
+	public void pushSeenObjects() {
+		container.pushSeenObjects(getXPlayer(), getXPlayer() + getVisibility() - 1);
 	}
 }

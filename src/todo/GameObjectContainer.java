@@ -41,14 +41,11 @@ public class GameObjectContainer {
         return ret;
     }
 
-    public void forceAddObject(GameObject o) {
+    public void clearRow(int row) {
         for(GameObject c:gameObjects){
-            if(c.getX() == o.getX())
+            if(c.getX() == row)
                 c.hp = 0;
         }
-        deleteDeadObjects();
-        gameObjects.add(o);
-        o.onEnter();
     }
 
     public void clearSeenObjects(int startColumn, int endColumn) {
@@ -57,5 +54,15 @@ public class GameObjectContainer {
                 c.hp = 0;
         }
         deleteDeadObjects();
+    }
+
+    public void pushSeenObjects(int startColumn, int endColumn){
+        for(int i = GameObject.getNumObjects() - 1; i >= 0; i--){
+            GameObject o = gameObjects.get(i);
+            if(o.getX() >= startColumn && o.getX() <= endColumn && getObjectInPos(o.getX() + 1, o.getY()) == null){
+                o.x++;
+                gameObjects.set(i, o);
+            }
+        }
     }
 }

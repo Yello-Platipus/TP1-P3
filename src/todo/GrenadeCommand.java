@@ -1,6 +1,6 @@
 package todo;
 
-public class GrenadeCommand extends Command{
+public class GrenadeCommand extends Command implements Buyable{
 
         private static final String NAME = "generates a grenade in a given position";
 
@@ -9,6 +9,8 @@ public class GrenadeCommand extends Command{
         private static final String SHORTCUT = "g";
 
         private static final String HELP = "add a grenade in position x, y";
+
+        private int coinUsage = 3;
 
         private int x;
 
@@ -19,7 +21,7 @@ public class GrenadeCommand extends Command{
     }
 
     @Override
-    public boolean execute(Game game) {
+    public boolean execute(Game game) { // TODO
 
         return true;
     }
@@ -37,5 +39,10 @@ public class GrenadeCommand extends Command{
             }
         }
         return null;
+    }
+
+    @Override
+    public int cost() {
+        return coinUsage;
     }
 }
