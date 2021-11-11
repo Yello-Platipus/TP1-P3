@@ -47,6 +47,9 @@ public class Game {
 	public int getXPlayer() {
 		return player.getX();
 	}
+	public int getYPlayer(){
+		return player.getY();
+	}
 	public int getNumCoins(){
 		return player.getNumCoins();
 	}
@@ -141,7 +144,6 @@ public class Game {
 	public void executeInstantAction(InstantAction action){
 		action.execute(this);
 	}
-
 
 	public void forceAdvancedObject(int command) {
 		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility());
