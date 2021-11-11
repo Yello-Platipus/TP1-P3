@@ -119,4 +119,8 @@ public class GamePrinter {
 		str.append(Obstacle.INFO);
 		System.out.print(str.toString());
 	}
+
+	public static void notEnoughCoinsMessage(){
+		System.out.println("Not enough coins");
+	}
 }

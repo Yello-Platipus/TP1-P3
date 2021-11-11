@@ -43,6 +43,12 @@ public class Wall extends GameObject{
     }
 
     @Override
+    public boolean receiveExplosion() {
+        hp--;
+        return true;
+    }
+
+    @Override
     public void onEnter() {
         numWalls++;
         numObjects++;

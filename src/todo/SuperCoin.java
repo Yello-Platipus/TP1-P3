@@ -36,6 +36,11 @@ public class SuperCoin extends GameObject{
     }
 
     @Override
+    public boolean receiveExplosion() {
+        return false;
+    }
+
+    @Override
     public void onEnter() {
         numSuperCoins++;
         numObjects++;

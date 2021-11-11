@@ -24,6 +24,11 @@ public class Truck extends GameObject{
     }
 
     @Override
+    public boolean receiveExplosion() {
+        return false;
+    }
+
+    @Override
     public void onEnter() {
 
     }

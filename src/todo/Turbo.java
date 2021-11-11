@@ -27,6 +27,11 @@ public class Turbo extends GameObject{
     }
 
     @Override
+    public boolean receiveExplosion() {
+        return false;
+    }
+
+    @Override
     public void onEnter() {
 
     }

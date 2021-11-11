@@ -15,7 +15,12 @@ public abstract class Command {
 		new MoveDownCommand(),
 		new ExitCommand(),
 		new ResetCommand(),
-		new TestCommand()
+		new TestCommand(),
+		new ShootCommand(),
+		new GrenadeCommand(),
+		new WaveCommand(),
+		new ClearCommand(),
+		new CheatCommand()
 	};
 	/* @formatter:on */
 

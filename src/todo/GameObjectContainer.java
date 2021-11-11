@@ -46,4 +46,12 @@ public class GameObjectContainer {
         deleteDeadObjects();
         gameObjects.add(o);
     }
+
+    public void clearSeenObjects(int startColumn, int endColumn) {
+        for(GameObject c: gameObjects){
+            if(c.getX() >= startColumn && c.getX() < endColumn)
+                c.onDelete();
+                gameObjects.remove(c);
+        }
+    }
 }

@@ -17,7 +17,7 @@ public class GameObjectGenerator {
 		}
 	}
 
-	public static void reset(Level level) { // El level sera para la parte 2
+	public static void reset(Level level) {
 		Obstacle.reset();
 		Coin.reset();
 	}
@@ -28,23 +28,23 @@ public class GameObjectGenerator {
 		}
 	}
 
-	public static void forceAdvanceObject(Game game, int id, int x) {
+	public static void forceAdvancedObject(Game game, int id, int x) {
 		GameObject o = null;
 		switch (id) {
 			case 1:
-				o = new Wall(game, game.getRandomLane(), x);
+				o = new Wall(game, x, game.getRandomLane());
 				break;
 			case 2:
-				o = new Turbo(game, game.getRandomLane(), x);
+				o = new Turbo(game, x, game.getRandomLane());
 				break;
 			case 3:
-				o = new SuperCoin(game, game.getRandomLane(), x);
+				o = new SuperCoin(game, x, game.getRandomLane());
 				break;
 			case 4:
-				o = new Truck(game, game.getRandomLane(), x);
+				o = new Truck(game, x, game.getRandomLane());
 				break;
 			case 5:
-				o = new Pedestrian(game, 0, x);
+				o = new Pedestrian(game, x, 0);
 				break;
 		}
 		game.forceAddObject(o);

@@ -6,6 +6,7 @@ public class Grenade extends GameObject{
 
     public Grenade(Game game, int x, int y) {
         super(game, x, y);
+        hp = 3;
     }
 
     @Override
@@ -20,6 +21,11 @@ public class Grenade extends GameObject{
 
     @Override
     public boolean receiveShot() {
+        return false;
+    }
+
+    @Override
+    public boolean receiveExplosion() {
         return false;
     }
 

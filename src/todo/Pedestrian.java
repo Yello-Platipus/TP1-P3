@@ -24,6 +24,11 @@ public class Pedestrian extends GameObject{
     }
 
     @Override
+    public boolean receiveExplosion() {
+        return false;
+    }
+
+    @Override
     public void onEnter() {
 
     }

@@ -143,7 +143,11 @@ public class Game {
 	}
 
 
-	public void forceAdvanceObject(int command) {
-		GameObjectGenerator.forceAdvanceObject(this, command, getRandomLane());
+	public void forceAdvancedObject(int command) {
+		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility());
+	}
+
+	public void clearSeenObjects() {
+		container.clearSeenObjects(getXPlayer(), getXPlayer() + getVisibility());
 	}
 }
