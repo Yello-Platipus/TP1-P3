@@ -18,11 +18,14 @@ public class GameObjectContainer {
     }
 
     public void deleteDeadObjects(){
-        for(int i = 0;i< GameObject.numObjects;i++){
+        int i = 0;
+        while(i< GameObject.numObjects){
             if(!gameObjects.get(i).isAlive()){
                 gameObjects.get(i).onDelete();
                 gameObjects.remove(i);
             }
+            else
+                i++;
         }
     }
 
@@ -40,18 +43,19 @@ public class GameObjectContainer {
 
     public void forceAddObject(GameObject o) {
         for(GameObject c:gameObjects){
-            if(c.getY() == o.getY())
+            if(c.getX() == o.getX())
                 c.hp = 0;
         }
         deleteDeadObjects();
         gameObjects.add(o);
+        o.onEnter();
     }
 
     public void clearSeenObjects(int startColumn, int endColumn) {
         for(GameObject c: gameObjects){
             if(c.getX() >= startColumn && c.getX() < endColumn)
-                c.onDelete();
-                gameObjects.remove(c);
+                c.hp = 0;
         }
+        deleteDeadObjects();
     }
 }

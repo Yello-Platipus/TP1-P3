@@ -27,7 +27,7 @@ public class SuperCoin extends GameObject{
     @Override
     public boolean receiveCollision(Player player) {
         player.addCoin(value);
-        hp = 0;
+        hp--;
         return true;
     }
 

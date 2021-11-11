@@ -3,6 +3,7 @@ package todo;
 public class Turbo extends GameObject{
 
     private static int boost;
+    private static int numTurbos = 0;
     static String INFO = "[TURBO] pushes the car 3 columns\n";
 
     public Turbo(Game game, int x, int y) {
@@ -34,7 +35,8 @@ public class Turbo extends GameObject{
 
     @Override
     public void onEnter() {
-
+        numTurbos++;
+        numObjects++;
     }
 
     @Override
@@ -44,6 +46,7 @@ public class Turbo extends GameObject{
 
     @Override
     public void onDelete() {
-
+        numTurbos--;
+        numObjects--;
     }
 }

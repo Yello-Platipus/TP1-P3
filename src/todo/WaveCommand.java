@@ -4,13 +4,13 @@ import javax.print.attribute.standard.MediaSize;
 
 public class WaveCommand extends Command{
 
-    private static final String NAME = "generate objects";
+    private static final String NAME = "creates a wave that pushes objects";
 
-    private static final String DETAILS = "Cheat [1..5]";
+    private static final String DETAILS = "[w]ave";
 
-    private static final String SHORTCUT = "5";
+    private static final String SHORTCUT = "w";
 
-    private static final String HELP = "Removes all elements of last visible column, and adds an Advanced Object";
+    private static final String HELP = "do wave";
 
     public WaveCommand() {
         super(NAME, SHORTCUT, DETAILS, HELP);

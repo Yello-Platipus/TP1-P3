@@ -67,6 +67,8 @@ public class GamePrinter {
 		ret.append("Cycle: " + game.getCycles() + "\n");
 		ret.append("Total obstacles: " + Obstacle.getNumObstacles() + "\n");
 		ret.append("Total coins: " + Coin.getNumCoins());
+		if(SuperCoin.hasSuperCoins())
+			System.out.println("Supercoin is present\n");
 		ret.append(getTime());
 		return ret.toString();
 	}

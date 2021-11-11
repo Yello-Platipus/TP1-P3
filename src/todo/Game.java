@@ -99,7 +99,7 @@ public class Game {
 		if(player.isInPosition(x, y))
 			icono = player.symbol;
 		else if(object != null)
-			icono = object.symbol;
+			icono = object.getSymbol();
 
 		else if(x == getLength())
 			icono = FINISH_LANE;
@@ -149,7 +149,7 @@ public class Game {
 	}
 
 	public void forceAdvancedObject(int command) {
-		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility());
+		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
 	}
 
 	public void clearSeenObjects() {
