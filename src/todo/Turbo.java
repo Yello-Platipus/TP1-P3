@@ -8,6 +8,7 @@ public class Turbo extends GameObject{
     public Turbo(Game game, int x, int y) {
         super(game, x, y);
         boost = 3;
+        symbol = ">>>";
     }
 
     @Override

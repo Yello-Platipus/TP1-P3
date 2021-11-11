@@ -4,8 +4,12 @@ public class Truck extends GameObject{
 
     static String INFO = "[TRUCK] moves towards the player\n";
 
+    private static int numTrucks = 0;
+
     public Truck(Game game, int x, int y) {
         super(game, x, y);
+        symbol = "←";
+        hp = 1;
     }
 
     @Override
@@ -15,22 +19,26 @@ public class Truck extends GameObject{
 
     @Override
     public boolean receiveCollision(Player player) {
-        return false;
+        player.zeMato();
+        return true;
     }
 
     @Override
     public boolean receiveShot() {
-        return false;
+        hp--;
+        return true;
     }
 
     @Override
     public boolean receiveExplosion() {
-        return false;
+        hp--;
+        return true;
     }
 
     @Override
     public void onEnter() {
-
+        numTrucks++;
+        numObjects++;
     }
 
     @Override
@@ -40,6 +48,7 @@ public class Truck extends GameObject{
 
     @Override
     public void onDelete() {
-
+        numTrucks--;
+        numObjects--;
     }
 }

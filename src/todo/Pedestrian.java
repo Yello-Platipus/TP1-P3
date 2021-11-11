@@ -3,9 +3,12 @@ package todo;
 public class Pedestrian extends GameObject{
 
     static String INFO = "[PEDESTRIAN] person crossing the road up and down\n";
+    private static int numPedestrians = 0;
 
     public Pedestrian(Game game, int x, int y) {
         super(game, x, y);
+        symbol = "☺";
+        hp = 1;
     }
 
     @Override
@@ -15,22 +18,26 @@ public class Pedestrian extends GameObject{
 
     @Override
     public boolean receiveCollision(Player player) {
-        return false;
+        player.zeMato();
+        return true;
     }
 
     @Override
     public boolean receiveShot() {
-        return false;
+        hp--;
+        return true;
     }
 
     @Override
     public boolean receiveExplosion() {
-        return false;
+        hp--;
+        return true;
     }
 
     @Override
     public void onEnter() {
-
+        numPedestrians++;
+        numObjects++;
     }
 
     @Override
@@ -40,6 +47,7 @@ public class Pedestrian extends GameObject{
 
     @Override
     public void onDelete() {
-
+        numPedestrians--;
+        numObjects--;
     }
 }

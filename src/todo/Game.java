@@ -89,6 +89,9 @@ public class Game {
 	public void receivePrize(int prize){
 		player.addCoin(prize);
 	}
+	public void useCoins(int numCoins){
+		player.addCoin(-numCoins);
+	}
 
 	public String positionToString(int x, int y){
 		String icono = "";

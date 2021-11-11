@@ -10,21 +10,22 @@ public class ShootCommand extends Command{
 
     private static final String HELP = "shoot bullet";
 
+    private static int coinUsage = 1;
+
     public ShootCommand() {
         super(NAME, SHORTCUT, DETAILS, HELP);
     }
-
 
     @Override
     public boolean execute(Game game) {
         boolean canShoot = game.getNumCoins() > 0;
         if(canShoot){
+            game.useCoins(coinUsage);
             game.executeInstantAction(new Shot());
             game.update();
         }
-        else // TODO cual es el bueno?
-            GamePrinter.notEnoughCoinsMessage();
-            //game.notEnoughCoinsMessage();
+        else
+            System.out.println("Not enough coins");
         return canShoot;
     }
 }
