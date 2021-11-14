@@ -151,11 +151,17 @@ public class Game {
 		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
 	}
 
-	public void clearSeenObjects() {
-		container.clearSeenObjects(getXPlayer(), getXPlayer() + getVisibility());
+	public void clear() {
+		container.clear();
 	}
 
 	public void pushSeenObjects() {
 		container.pushSeenObjects(getXPlayer(), getXPlayer() + getVisibility() - 1);
+	}
+	public void createGrenade(GameObject grenade,int x, int y){
+		x = x + getXPlayer();
+		if(x >= getXPlayer() && x < (getXPlayer()+ getVisibility()) && getObjectInPos(x,y) == null) {
+			container.addObject(grenade);
+		}
 	}
 }

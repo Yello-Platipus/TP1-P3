@@ -4,7 +4,7 @@ public class Shot implements InstantAction{
 
     @Override
     public void execute(Game game) {
-        int i = 0;
+        int i = 0;//AAAA 1? xd
         boolean hasHit = false;
         GameObject object;
         while(!hasHit && i < game.getVisibility()){

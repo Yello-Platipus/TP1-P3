@@ -22,7 +22,7 @@ public class GrenadeCommand extends Command implements Buyable{
 
     @Override
     public boolean execute(Game game) { // TODO
-
+        game.createGrenade(new Grenade(game, x, y),x,y);
         return true;
     }
 
