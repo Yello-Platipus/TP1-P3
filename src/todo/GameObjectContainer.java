@@ -17,15 +17,17 @@ public class GameObjectContainer {
         }
     }
 
-    public void deleteDeadObjects(){
+    public void updateObjects(){
         int i = 0;
         while(i< GameObject.numObjects){
             if(!gameObjects.get(i).isAlive()){
                 gameObjects.get(i).onDelete();
                 gameObjects.remove(i);
             }
-            else
+            else {
+                gameObjects.get(i).update();
                 i++;
+            }
         }
     }
 
@@ -52,7 +54,7 @@ public class GameObjectContainer {
         for(GameObject c: gameObjects){
             c.hp = 0;
         }
-        deleteDeadObjects();
+        updateObjects();
     }
 
     public void pushSeenObjects(int startColumn, int endColumn){
