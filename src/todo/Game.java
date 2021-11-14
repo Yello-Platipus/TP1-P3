@@ -158,9 +158,9 @@ public class Game {
 	public void pushSeenObjects() {
 		container.pushSeenObjects(getXPlayer(), getXPlayer() + getVisibility() - 1);
 	}
-	public void createGrenade(GameObject grenade,int x, int y){
-		x = x + getXPlayer();
-		if(x >= getXPlayer() && x < (getXPlayer()+ getVisibility()) && getObjectInPos(x,y) == null) {
+
+	public void createGrenade(GameObject grenade){
+		if(grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility()) && getObjectInPos(grenade.getX(), grenade.getY()) == null) {
 			container.addObject(grenade);
 		}
 	}

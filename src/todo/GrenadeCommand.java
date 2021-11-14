@@ -21,8 +21,8 @@ public class GrenadeCommand extends Command implements Buyable{
     }
 
     @Override
-    public boolean execute(Game game) { // TODO
-        game.createGrenade(new Grenade(game, x, y),x,y);
+    public boolean execute(Game game) {
+        game.createGrenade(new Grenade(game, x + game.getXPlayer(), y));
         return true;
     }
 
