@@ -18,7 +18,6 @@ public class ShootCommand extends Command implements Buyable{
 
     @Override
     public boolean execute(Game game) {
-
         if(buy(game)){
             game.executeInstantAction(new Shot());
             game.update();
@@ -26,8 +25,6 @@ public class ShootCommand extends Command implements Buyable{
         else{
             System.out.println("Insufficient founds for this action");
         }
-
-
         return true;
     }
 
