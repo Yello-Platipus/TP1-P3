@@ -92,7 +92,7 @@ public class Game {
 
 	public String positionToString(int x, int y){
 		String icono = "";
-		GameObject object = getObjectInPos(x,y);
+		GameObject object = getObjectInPos(x,y);//DaniPuta
 		if(player.isInPosition(x, y))
 			icono += player.symbol + " ";
 		if(object != null)
