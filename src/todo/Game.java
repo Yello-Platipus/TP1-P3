@@ -17,16 +17,7 @@ public class Game {
 	private GameObjectContainer container;
 
 	public Game(long seed, Level level){
-		this.seed = seed;
-		this.level = level;
-		cycles = 0;
-		startTime = System.currentTimeMillis();
-		random = new Random(seed);
-		modoTest = (level == Level.TEST);
-		container = new GameObjectContainer();
-		player = new Player(this);
-		exit = false;
-		GameObjectGenerator.generateGameObjects(this, level);
+		reset(seed, level);
 	}
 
 	public Level getLevel(){
@@ -95,7 +86,7 @@ public class Game {
 		GameObject object = getObjectInPos(x,y);
 		if(player.isInPosition(x, y))
 			icono.append(player.symbol + " ");
-		else if(object != null)
+		if(object != null)
 			icono.append(container.getStringInPos(x, y) + " ");
 		else if(x == getLength())
 			icono.append(FINISH_LANE + " ");
@@ -125,7 +116,7 @@ public class Game {
 	}
 	public void forceAddObject(GameObject o) {
 		container.clearRow(o.getX());
-		container.updateObjects();
+		updateObjects();
 		container.addObject(o);
 	}
 
@@ -138,6 +129,7 @@ public class Game {
 		modoTest = (level == Level.TEST);
 		container = new GameObjectContainer();
 		player = new Player(this);
+		exit = false;
 		GameObjectGenerator.reset(level);
 		GameObjectGenerator.generateGameObjects(this, level);
 	}

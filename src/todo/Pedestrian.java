@@ -4,11 +4,13 @@ public class Pedestrian extends GameObject{
 
     static String INFO = "[PEDESTRIAN] person crossing the road up and down\n";
     private static int numPedestrians = 0;
+    private boolean movingUp;
 
     public Pedestrian(Game game, int x, int y) {
         super(game, x, y);
         symbol = "☺";
         hp = 1;
+        movingUp = false;
     }
 
     @Override
@@ -19,6 +21,7 @@ public class Pedestrian extends GameObject{
     @Override
     public boolean receiveCollision(Player player) {
         player.zeMato();
+        hp = 0;
         return true;
     }
 
@@ -42,7 +45,12 @@ public class Pedestrian extends GameObject{
 
     @Override
     public void update() {
-
+        if(movingUp)
+            y--;
+        else
+            y++;
+        if(y == 0 || y == game.getWidth() - 1)
+            movingUp = !movingUp;
     }
 
     @Override

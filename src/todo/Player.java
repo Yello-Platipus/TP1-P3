@@ -22,9 +22,10 @@ public class Player extends GameObject{
 	}
 
 	public boolean moveUp(){
-		if(y > 0) {
+		if(!doCollision() && y > 0) {
 			y--;
-			update();
+			x++;
+			doCollision();
 			return true;
 		}
 		else
@@ -32,9 +33,10 @@ public class Player extends GameObject{
 	}
 
 	public boolean moveDown(){
-		if(y < game.getWidth() - 1) {
+		if(!doCollision() && y < game.getWidth() - 1) {
 			y++;
-			update();
+			x++;
+			doCollision();
 			return true;
 		}
 		else
@@ -82,8 +84,10 @@ public class Player extends GameObject{
 
 	@Override
 	public void update() {
-		x++;
-		doCollision();
+		if(!doCollision()) {
+			x++;
+			doCollision();
+		}
 	}
 
 	@Override
