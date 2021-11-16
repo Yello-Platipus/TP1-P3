@@ -48,6 +48,10 @@ public class Player extends GameObject{
 		symbol = "@";
 	}
 
+	public void penalty(){
+		numCoins = 0;
+	}
+
 	public void pickUpTurbo(int boost){
 		x += boost;
 	}

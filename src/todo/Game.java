@@ -119,6 +119,13 @@ public class Game {
 		updateObjects();
 		container.addObject(o);
 	}
+	public void forceAdvancedObject(int command) {
+		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
+	}
+	public void createGrenade(GameObject grenade){
+		if(grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility()) && getObjectInPos(grenade.getX(), grenade.getY()) == null)
+			container.addObject(grenade);
+	}
 
 	public void reset(long seed, Level level){
 		this.seed = seed;
@@ -138,19 +145,15 @@ public class Game {
 		action.execute(this);
 	}
 
-	public void forceAdvancedObject(int command) {
-		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
-	}
-	public void createGrenade(GameObject grenade){
-		if(grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility()) && getObjectInPos(grenade.getX(), grenade.getY()) == null)
-			container.addObject(grenade);
-	}
-
 	public void clear() {
 		container.clear();
 	}
 
 	public void pushSeenObjects() {
 		container.pushSeenObjects(getXPlayer(), getXPlayer() + getVisibility() - 1);
+	}
+
+	public void punishPlayer(){
+		player.penalty();
 	}
 }

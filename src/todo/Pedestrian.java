@@ -22,18 +22,21 @@ public class Pedestrian extends GameObject{
     public boolean receiveCollision(Player player) {
         player.zeMato();
         hp = 0;
+        game.punishPlayer();
         return true;
     }
 
     @Override
     public boolean receiveShot() {
         hp--;
+        game.punishPlayer();
         return true;
     }
 
     @Override
     public boolean receiveExplosion() {
         hp--;
+        game.punishPlayer();
         return true;
     }
 
