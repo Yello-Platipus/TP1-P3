@@ -161,9 +161,6 @@ public class Game {
 		player.penalty();
 	}
 	public boolean tryToBuy(int coins){
-		if(player.decreaseCoins(coins)){
-			return true;
-		}
-		return false;
+		return player.decreaseCoins(coins);
 	}
 }

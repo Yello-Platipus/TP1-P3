@@ -34,5 +34,5 @@ public class ShootCommand extends Command implements Buyable{
     @Override
     public int cost() {
         return coinUsage;
-    }
+    } // TODO mirar si funciona igual en eclipse
 }
