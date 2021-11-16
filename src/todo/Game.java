@@ -119,14 +119,14 @@ public class Game {
 	}
 
 	public void deleteDeadObjects(){
-		container.deleteDeadObjects();
+		container.updateObjects();
 	}
 	public GameObject getObjectInPos(int x, int y){
 		return container.getObjectInPos(x, y);
 	}
 	public void forceAddObject(GameObject o) {
 		container.clearRow(o.getX());
-		container.deleteDeadObjects();
+		container.updateObjects();
 		container.addObject(o);
 	}
 
