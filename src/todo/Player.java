@@ -20,6 +20,13 @@ public class Player extends GameObject{
 	public void addCoin(int coinValue){
 		numCoins+=coinValue;
 	}
+	public boolean decreaseCoins(int coins){
+		if(numCoins > coins){
+			numCoins -= coins;
+			return true;
+		}
+		return false;
+	}
 
 	public boolean moveUp(){
 		if( y > 0) {

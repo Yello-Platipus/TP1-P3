@@ -3,8 +3,11 @@ package todo;
 public interface Buyable {
 
     public int cost();
-    public default void buy(Game game){
-        //TODO add your code
+    public default boolean buy(Game game){
+        if(game.tryToBuy(cost())){
+            return true;
+        }
+        return false;
     };
 
 }

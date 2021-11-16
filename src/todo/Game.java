@@ -122,9 +122,13 @@ public class Game {
 	public void forceAdvancedObject(int command) {
 		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
 	}
-	public void createGrenade(GameObject grenade){
-		if(grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility()) && getObjectInPos(grenade.getX(), grenade.getY()) == null)
+	public boolean createGrenade(GameObject grenade){
+		if(grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility()) && getObjectInPos(grenade.getX(), grenade.getY()) == null){
 			container.addObject(grenade);
+			return true;
+		}
+		return false;
+
 	}
 
 	public void reset(long seed, Level level){
@@ -155,5 +159,11 @@ public class Game {
 
 	public void punishPlayer(){
 		player.penalty();
+	}
+	public boolean tryToBuy(int coins){
+		if(player.decreaseCoins(coins)){
+			return true;
+		}
+		return false;
 	}
 }
