@@ -43,7 +43,7 @@ public class Truck extends GameObject{
 
     @Override
     public void update() {
-
+        x--;
     }
 
     @Override

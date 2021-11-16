@@ -66,4 +66,12 @@ public class GameObjectContainer {
             }
         }
     }
+
+    public String getStringInPos(int x, int y){
+        StringBuilder objects = new StringBuilder();
+        for(GameObject c: gameObjects)
+            if(c.isInPosition(x, y))
+                objects.append(c.getSymbol() + " ");
+        return objects.toString().trim();
+    }
 }

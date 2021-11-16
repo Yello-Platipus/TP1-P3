@@ -39,19 +39,14 @@ public class Grenade extends GameObject{
     @Override
     public void update() {
         hp--;
-        if(hp == 0){
-
-            for(int i= x-radio; i <= x+radio; i++){
+        if(hp == 0)
+            for(int i= x-radio; i <= x+radio; i++)
                 for(int j = y-radio; j <= y +radio;j++){
                     Collider objeto = game.getObjectInPos(i,j); // Collider
-                    if(objeto != null){
+                    if(objeto != null)
                         objeto.receiveExplosion();
-                    }
-
                 }
-            }
-        }
-        symbol = "ð["+ (hp + 1)+"]";
+        symbol = "ð[" + (hp + 1) + "]";
     }
 
     @Override

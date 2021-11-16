@@ -84,23 +84,22 @@ public class Game {
 	}
 	public void update(){
 		addCycles(1);
-		deleteDeadObjects();
+		updateObjects();
 	}
 	public void receivePrize(int prize){
 		player.addCoin(prize);
 	}
 
 	public String positionToString(int x, int y){
-		String icono = "";
+		StringBuilder icono = new StringBuilder();
 		GameObject object = getObjectInPos(x,y);
 		if(player.isInPosition(x, y))
-			icono = player.symbol;
+			icono.append(player.symbol + " ");
 		else if(object != null)
-			icono = object.getSymbol();
-
+			icono.append(container.getStringInPos(x, y) + " ");
 		else if(x == getLength())
-			icono = FINISH_LANE;
-		return icono;
+			icono.append(FINISH_LANE + " ");
+		return icono.toString().trim();
 	}
 
 	public void toggleTest() {
@@ -118,7 +117,7 @@ public class Game {
 			container.addObject(object);
 	}
 
-	public void deleteDeadObjects(){
+	public void updateObjects(){
 		container.updateObjects();
 	}
 	public GameObject getObjectInPos(int x, int y){
@@ -150,6 +149,10 @@ public class Game {
 	public void forceAdvancedObject(int command) {
 		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
 	}
+	public void createGrenade(GameObject grenade){
+		if(grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility()) && getObjectInPos(grenade.getX(), grenade.getY()) == null)
+			container.addObject(grenade);
+	}
 
 	public void clear() {
 		container.clear();
@@ -157,11 +160,5 @@ public class Game {
 
 	public void pushSeenObjects() {
 		container.pushSeenObjects(getXPlayer(), getXPlayer() + getVisibility() - 1);
-	}
-
-	public void createGrenade(GameObject grenade){
-		if(grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility()) && getObjectInPos(grenade.getX(), grenade.getY()) == null) {
-			container.addObject(grenade);
-		}
 	}
 }
