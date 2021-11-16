@@ -18,15 +18,17 @@ public class ShootCommand extends Command implements Buyable{
 
     @Override
     public boolean execute(Game game) {
-        boolean canShoot = game.getNumCoins() > 0;
-        if(canShoot){
-            buy(game);
+
+        if(buy(game)){
             game.executeInstantAction(new Shot());
             game.update();
         }
-        else
-            System.out.println("Not enough coins");
-        return canShoot;
+        else{
+            System.out.println("Insufficient founds for this action");
+        }
+
+
+        return true;
     }
 
     @Override

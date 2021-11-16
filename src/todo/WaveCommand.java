@@ -18,8 +18,9 @@ public class WaveCommand extends Command implements Buyable{
 
     @Override
     public boolean execute(Game game) {
-        buy(game);
-        game.pushSeenObjects();
+        if(buy(game)) game.pushSeenObjects();
+
+
         return true;
     }
 
