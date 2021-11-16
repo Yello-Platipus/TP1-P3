@@ -94,12 +94,15 @@ public class Game {
 		String icono = "";
 		GameObject object = getObjectInPos(x,y);
 		if(player.isInPosition(x, y))
-			icono = player.symbol;
-		else if(object != null)
-			icono = object.getSymbol();
+			icono += player.symbol + " ";
+		if(object != null)
+			icono += object.getSymbol() + " ";
 
-		else if(x == getLength())
-			icono = FINISH_LANE;
+		if(x == getLength())
+			icono += FINISH_LANE + " ";
+		icono.trim();
+
+
 		return icono;
 	}
 
