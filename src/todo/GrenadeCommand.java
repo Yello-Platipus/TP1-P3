@@ -2,19 +2,19 @@ package todo;
 
 public class GrenadeCommand extends Command implements Buyable{
 
-        private static final String NAME = "generates a grenade in a given position";
+    private static final String NAME = "generates a grenade in a given position";
 
-        private static final String DETAILS = "[g]renade <x> <y>";
+    private static final String DETAILS = "[g]renade <x> <y>";
 
-        private static final String SHORTCUT = "g";
+    private static final String SHORTCUT = "g";
 
-        private static final String HELP = "add a grenade in position x, y";
+    private static final String HELP = "add a grenade in position x, y";
 
-        private int coinUsage = 3;
+    private int coinUsage = 3;
 
-        private int x;
+    private int x;
 
-        private int y;
+    private int y;
 
     public GrenadeCommand() {
         super(NAME, SHORTCUT, DETAILS, HELP);
