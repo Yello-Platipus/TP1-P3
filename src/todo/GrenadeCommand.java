@@ -22,13 +22,18 @@ public class GrenadeCommand extends Command implements Buyable{
 
     @Override
     public boolean execute(Game game) {
-        if(game.createGrenade(new Grenade(game, x + game.getXPlayer(), y)) && buy(game)){
-
+        if(game.createGrenade(new Grenade(game, x + game.getXPlayer(), y))){
+            if(buy(game)) {
+                return true;
+            }
+            else {
+                System.out.println("Insufficient funds for this action");
+            }
         }
         else{
-            System.out.println("Insufficient founds for this action");
+            System.out.println("Invalid position.\n[ERROR]: Failed to add grenade\n");
         }
-        return true;
+        return false;
     }
 
     @Override

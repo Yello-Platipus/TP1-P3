@@ -123,7 +123,7 @@ public class Game {
 		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
 	}
 	public boolean createGrenade(GameObject grenade){
-		if(grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility()) && getObjectInPos(grenade.getX(), grenade.getY()) == null){
+		if((grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility())) && (grenade.getY() >= 0 && grenade.getY() < getWidth()) && getObjectInPos(grenade.getX(), grenade.getY()) == null){
 			container.addObject(grenade);
 			return true;
 		}
