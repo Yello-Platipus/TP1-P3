@@ -3,13 +3,12 @@ package todo;
 public class Coin extends GameObject{
 
 	private static int numCoins = 0;
-	private final int value;
+	private static final int value = 1;
 	static String INFO = "[Coin] gives 1 coin to the player\n";
 
 	public Coin(Game game, int x, int y){
 		super(game, x, y);
 		symbol = "¢";
-		value = 1;
 	}
 
 	public static int getNumCoins(){
@@ -28,7 +27,7 @@ public class Coin extends GameObject{
 	@Override
 	public boolean receiveCollision(Player player) {
 		player.addCoin(value);
-		hp = 0;
+		hp--;
 		return true;
 	}
 

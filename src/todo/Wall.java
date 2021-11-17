@@ -1,6 +1,6 @@
 package todo;
 
-public class Wall extends GameObject{
+public class Wall extends Obstacle{
 
     private static final int coinsOnDestroy = 5;
     private static int numWalls = 0;
@@ -26,37 +26,9 @@ public class Wall extends GameObject{
     }
 
     @Override
-    public boolean doCollision() {
-        return false;
-    }
-
-    @Override
-    public boolean receiveCollision(Player player) {
-        player.zeMato();
-        return true;
-    }
-
-    @Override
-    public boolean receiveShot() {
-        hp--;
-        return true;
-    }
-
-    @Override
-    public boolean receiveExplosion() {
-        hp--;
-        return true;
-    }
-
-    @Override
     public void onEnter() {
         numWalls++;
         numObjects++;
-    }
-
-    @Override
-    public void update() {
-
     }
 
     @Override

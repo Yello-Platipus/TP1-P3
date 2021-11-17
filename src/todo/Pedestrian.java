@@ -9,7 +9,6 @@ public class Pedestrian extends GameObject{
     public Pedestrian(Game game, int x, int y) {
         super(game, x, y);
         symbol = "☺";
-        hp = 1;
         movingUp = false;
     }
 
@@ -21,7 +20,7 @@ public class Pedestrian extends GameObject{
     @Override
     public boolean receiveCollision(Player player) {
         player.zeMato();
-        hp = 0;
+        hp--;
         game.punishPlayer();
         return true;
     }
