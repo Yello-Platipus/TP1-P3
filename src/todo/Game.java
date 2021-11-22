@@ -115,6 +115,8 @@ public class Game {
 		return container.getObjectInPos(x, y);
 	}
 	public void forceAddObject(GameObject o) {
+		container.clearRow(player.getX() + level.getVisibility() - 1);
+		updateObjects();
 		container.addObject(o);
 	}
 	public void forceAdvancedObject(int command) {
@@ -148,9 +150,6 @@ public class Game {
 
 	public void clear() {
 		container.clear();
-	}
-	public void clearLastRow(){
-		container.clearRow(player.getX() + level.getVisibility() - 1);
 	}
 
 	public void pushSeenObjects() {

@@ -18,8 +18,6 @@ public class CheatCommand extends Command{
 
     @Override
     public boolean execute(Game game) {
-        game.clearLastRow();
-        game.updateObjects();
         game.forceAdvancedObject(command);
         return true;
     }
