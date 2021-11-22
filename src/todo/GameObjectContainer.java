@@ -18,16 +18,15 @@ public class GameObjectContainer {
     }
 
     public void updateObjects(){
-        int i = 0;
-        while(i< GameObject.numObjects){
+        int i = gameObjects.size() - 1;
+        while(i >= 0){
             if(!gameObjects.get(i).isAlive()){
                 gameObjects.get(i).onDelete();
                 gameObjects.remove(i);
             }
-            else {
+            else
                 gameObjects.get(i).update();
-                i++;
-            }
+            i--;
         }
     }
 
