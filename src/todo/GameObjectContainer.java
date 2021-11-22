@@ -57,16 +57,6 @@ public class GameObjectContainer {
         updateObjects();
     }
 
-    public void pushSeenObjects(int startColumn, int endColumn){
-        for(int i = GameObject.getNumObjects() - 1; i >= 0; i--){
-            GameObject o = gameObjects.get(i);
-            if(o.getX() >= startColumn && o.getX() <= endColumn && getObjectInPos(o.getX() + 1, o.getY()) == null){
-                o.x++;
-                gameObjects.set(i, o);
-            }
-        }
-    }
-
     public String getStringInPos(int x, int y){
         StringBuilder objects = new StringBuilder();
         for(GameObject c: gameObjects)

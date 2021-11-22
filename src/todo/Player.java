@@ -21,7 +21,7 @@ public class Player extends GameObject{
 		numCoins+=coinValue;
 	}
 	public boolean decreaseCoins(int coins){
-		if(numCoins > coins){
+		if(numCoins >= coins){
 			numCoins -= coins;
 			return true;
 		}
@@ -29,7 +29,7 @@ public class Player extends GameObject{
 	}
 
 	public boolean moveUp(){
-		if( y > 0) {
+		if(!doCollision() && y > 0) {
 			y--;
 			x++;
 			doCollision();
@@ -40,7 +40,7 @@ public class Player extends GameObject{
 	}
 
 	public boolean moveDown(){
-		if(y < game.getWidth() - 1) {
+		if(!doCollision() && y < game.getWidth() - 1) {
 			y++;
 			x++;
 			doCollision();
@@ -67,8 +67,7 @@ public class Player extends GameObject{
 	public boolean doCollision() {
 		Collider objectCollision = game.getObjectInPos(x, y);
 		if (objectCollision != null) {
-			objectCollision.receiveCollision(this);
-			return true;
+			return objectCollision.receiveCollision(this);
 		}
 		return false;
 	}
@@ -89,16 +88,20 @@ public class Player extends GameObject{
 	}
 
 	@Override
+	public void receiveWave(){
+
+	}
+
+	@Override
 	public void onEnter() {
 
 	}
 
 	@Override
 	public void update() {
-
-			x++;
-			doCollision();
-
+		doCollision();
+		x++;
+		doCollision();
 	}
 
 	@Override

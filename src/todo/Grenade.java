@@ -32,6 +32,11 @@ public class Grenade extends GameObject{
     }
 
     @Override
+    public void receiveWave() {
+        //TODO?
+    }
+
+    @Override
     public void onEnter() {
         numObjects++;
     }

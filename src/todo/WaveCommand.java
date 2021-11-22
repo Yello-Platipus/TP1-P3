@@ -18,8 +18,15 @@ public class WaveCommand extends Command implements Buyable{
 
     @Override
     public boolean execute(Game game) {
-        if(buy(game))
-            game.pushSeenObjects();
+        if(buy(game)) {
+            for (int i = game.getXPlayer() + game.getVisibility(); i >= game.getXPlayer(); i--) {
+                for (int j = game.getWidth(); j >= 0; j--) {
+                    GameObject o = game.getObjectInPos(i, j);
+                    if (o != null && game.getObjectInPos(o.getX() + 1, o.getY()) == null)
+                        o.receiveWave();
+                }
+            }
+        }
         return true;
     }
 

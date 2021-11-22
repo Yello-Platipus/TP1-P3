@@ -38,6 +38,9 @@ public abstract class GameObject implements Collider {
 	public int getX() {
 		return x;
 	}
+	public void increaseX(){
+		x++;
+	}
 	public int getY() {
 		return y;
 	}
@@ -51,6 +54,11 @@ public abstract class GameObject implements Collider {
 	public abstract void update();
 
 	public abstract void onDelete();
+
+	@Override
+	public void receiveWave() {
+		x++;
+	}
 
 	// TODO add your code
 }
