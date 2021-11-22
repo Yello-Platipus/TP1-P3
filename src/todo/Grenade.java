@@ -27,13 +27,8 @@ public class Grenade extends GameObject{
     }
 
     @Override
-    public boolean receiveExplosion() {
-        return false;
-    }
-
-    @Override
     public void receiveWave() {
-        //TODO?
+
     }
 
     @Override

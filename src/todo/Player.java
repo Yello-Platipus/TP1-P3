@@ -83,11 +83,6 @@ public class Player extends GameObject{
 	}
 
 	@Override
-	public boolean receiveExplosion() {
-		return false;
-	}
-
-	@Override
 	public void receiveWave(){
 
 	}

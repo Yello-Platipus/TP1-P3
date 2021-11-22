@@ -37,11 +37,6 @@ public class Coin extends GameObject{
 	}
 
 	@Override
-	public boolean receiveExplosion() {
-		return false;
-	}
-
-	@Override
 	public void onEnter() {
 		numCoins++;
 		numObjects++;

@@ -30,12 +30,6 @@ public class Truck extends GameObject{
     }
 
     @Override
-    public boolean receiveExplosion() {
-        hp--;
-        return true;
-    }
-
-    @Override
     public void onEnter() {
         numTrucks++;
         numObjects++;

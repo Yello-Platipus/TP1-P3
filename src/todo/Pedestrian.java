@@ -33,13 +33,6 @@ public class Pedestrian extends GameObject{
     }
 
     @Override
-    public boolean receiveExplosion() {
-        hp--;
-        game.punishPlayer();
-        return true;
-    }
-
-    @Override
     public void onEnter() {
         numPedestrians++;
         numObjects++;

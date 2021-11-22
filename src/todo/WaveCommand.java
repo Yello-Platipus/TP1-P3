@@ -26,6 +26,7 @@ public class WaveCommand extends Command implements Buyable{
                         o.receiveWave();
                 }
             }
+            game.update();
         }
         return true;
     }

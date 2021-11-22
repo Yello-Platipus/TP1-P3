@@ -56,6 +56,11 @@ public abstract class GameObject implements Collider {
 	public abstract void onDelete();
 
 	@Override
+	public boolean receiveExplosion(){
+		return receiveShot();
+	}
+
+	@Override
 	public void receiveWave() {
 		x++;
 	}
