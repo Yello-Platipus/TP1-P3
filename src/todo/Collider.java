@@ -7,4 +7,5 @@ public interface Collider {
 	boolean receiveShot();
 	boolean receiveExplosion();
 	void receiveWave();
+	boolean receiveThunder();
 }
