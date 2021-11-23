@@ -88,6 +88,11 @@ public class Player extends GameObject{
 	}
 
 	@Override
+	public boolean receiveThunder() {
+		return false;
+	}
+
+	@Override
 	public void onEnter() {
 
 	}

@@ -37,6 +37,11 @@ public class Coin extends GameObject{
 	}
 
 	@Override
+	public boolean receiveThunder() {
+		return false;
+	}
+
+	@Override
 	public void onEnter() {
 		numCoins++;
 		numObjects++;

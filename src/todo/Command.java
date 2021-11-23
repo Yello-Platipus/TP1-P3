@@ -2,6 +2,9 @@ package todo;
 
 public abstract class Command {
 
+	protected static int MAX_OBJ_ID = 5;
+	protected static int MIN_OBJ_ID = 1;
+
 	private static final String UNKNOWN_COMMAND_MSG = "Unknown command";
 
 	protected static final String INCORRECT_NUMBER_OF_ARGS_MSG = "Incorrect number of arguments";

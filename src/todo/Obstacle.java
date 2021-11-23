@@ -36,6 +36,12 @@ public class Obstacle extends GameObject{
 	}
 
 	@Override
+	public boolean receiveThunder() {
+		hp = 0;
+		return true;
+	}
+
+	@Override
 	public void onEnter() {
 		numObs++;
 		numObjects++;

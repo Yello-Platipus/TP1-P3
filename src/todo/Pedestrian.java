@@ -1,6 +1,6 @@
 package todo;
 
-public class Pedestrian extends GameObject{
+public class Pedestrian extends Obstacle{
 
     static String INFO = "[PEDESTRIAN] person crossing the road up and down\n";
     private static int numPedestrians = 0;
@@ -10,11 +10,6 @@ public class Pedestrian extends GameObject{
         super(game, x, y);
         symbol = "☺";
         movingUp = false;
-    }
-
-    @Override
-    public boolean doCollision() {
-        return false;
     }
 
     @Override

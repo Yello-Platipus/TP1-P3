@@ -1,6 +1,6 @@
 package todo;
 
-public class Truck extends GameObject{
+public class Truck extends Obstacle{
 
     static String INFO = "[TRUCK] moves towards the player\n";
 
@@ -10,23 +10,6 @@ public class Truck extends GameObject{
         super(game, x, y);
         symbol = "←";
         hp = 1;
-    }
-
-    @Override
-    public boolean doCollision() {
-        return false;
-    }
-
-    @Override
-    public boolean receiveCollision(Player player) {
-        player.zeMato();
-        return true;
-    }
-
-    @Override
-    public boolean receiveShot() {
-        hp--;
-        return true;
     }
 
     @Override
