@@ -74,8 +74,10 @@ public class Game {
 		player.update();
 	}
 	public void update(){
+		container.deleteDeadObjects();
+		GameObjectGenerator.generateRuntimeObjects(this);
 		addCycles(1);
-		updateObjects();
+		container.updateObjects();
 	}
 	public void receivePrize(int prize){
 		player.addCoin(prize);
@@ -100,23 +102,23 @@ public class Game {
 		exit = true;
 	}
 
-	public int getRandomLane(){
+	public int getRandomY(){
 		return (int)(this.random.nextDouble() * level.getWidth());
+	}
+	public int getRandomX(){
+		return (int)(this.random.nextDouble() * level.getLength());
 	}
 	public void tryToAddObject(GameObject object, double frequency){
 		if (random.nextDouble() < frequency)
 			container.addObject(object);
 	}
 
-	public void updateObjects(){
-		container.updateObjects();
-	}
 	public GameObject getObjectInPos(int x, int y){
 		return container.getObjectInPos(x, y);
 	}
 	public void forceAddObject(GameObject o) {
 		container.clearRow((player.getX() + level.getVisibility() - 1));
-		updateObjects();
+		container.deleteDeadObjects();
 		container.addObject(o);
 	}
 	public void forceAdvancedObject(int command) {

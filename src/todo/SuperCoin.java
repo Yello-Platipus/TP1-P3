@@ -2,7 +2,7 @@ package todo;
 
 public class SuperCoin extends Coin{
 
-    private static int numSuperCoins = 0;
+    private static boolean hasSuperCoin = false;
     private static final int value = 1000;
     static String INFO = "[SUPERCOIN] gives 1000 coins\n";
 
@@ -12,11 +12,11 @@ public class SuperCoin extends Coin{
     }
 
     public static boolean hasSuperCoins(){
-        return numSuperCoins > 0;
+        return hasSuperCoin;
     }
 
     public static void reset(){
-        numSuperCoins = 0;
+        hasSuperCoin = false;
     }
 
     @Override
@@ -28,13 +28,13 @@ public class SuperCoin extends Coin{
 
     @Override
     public void onEnter() {
-        numSuperCoins++;
+        hasSuperCoin = true;
         numObjects++;
     }
 
     @Override
     public void onDelete() {
-        numSuperCoins--;
+        hasSuperCoin = false;
         numObjects--;
     }
 }

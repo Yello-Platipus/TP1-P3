@@ -20,12 +20,18 @@ public class GameObjectContainer {
     public void updateObjects(){
         int i = gameObjects.size() - 1;
         while(i >= 0){
+            gameObjects.get(i).update();
+            i--;
+        }
+    }
+
+    public void deleteDeadObjects(){
+        int i = gameObjects.size() - 1;
+        while(i >= 0){
             if(!gameObjects.get(i).isAlive()){
                 gameObjects.get(i).onDelete();
                 gameObjects.remove(i);
             }
-            else
-                gameObjects.get(i).update();
             i--;
         }
     }
