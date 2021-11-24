@@ -74,10 +74,10 @@ public class Game {
 		player.update();
 	}
 	public void update(){
-		container.deleteDeadObjects();
+		container.updateObjects();
 		GameObjectGenerator.generateRuntimeObjects(this);
 		addCycles(1);
-		container.updateObjects();
+		container.deleteDeadObjects();
 	}
 	public void receivePrize(int prize){
 		player.addCoin(prize);
@@ -105,8 +105,8 @@ public class Game {
 	public int getRandomY(){
 		return (int)(this.random.nextDouble() * level.getWidth());
 	}
-	public int getRandomX(){
-		return (int)(this.random.nextDouble() * level.getLength());
+	public int getRandomXInVisibility(){
+		return (int)(this.random.nextDouble() * (level.getVisibility() - 1));
 	}
 	public void tryToAddObject(GameObject object, double frequency){
 		if (random.nextDouble() < frequency)

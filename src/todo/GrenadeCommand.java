@@ -21,7 +21,7 @@ public class GrenadeCommand extends Command implements Buyable{
     }
 
     @Override
-    public boolean execute(Game game) { // TODO HAY QUE UPDATEAR ANTES DE METER LA GRANADA; PERO DESPUES DE COMPROBAR SI SE PUEDE METER
+    public boolean execute(Game game) {
         if(game.getObjectInPos(game.getXPlayer() + x, y) == null){
             if(buy(game)) {
                 game.update();
