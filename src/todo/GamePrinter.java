@@ -119,6 +119,12 @@ public class GamePrinter {
 		str.append(Player.INFO);
 		str.append(Coin.INFO);
 		str.append(Obstacle.INFO);
+		str.append(Grenade.INFO);
+		str.append(Wall.INFO);
+		str.append(Turbo.INFO);
+		str.append(SuperCoin.INFO);
+		str.append(Truck.INFO);
+		str.append(Pedestrian.INFO);
 		System.out.print(str.toString());
 	}
 }

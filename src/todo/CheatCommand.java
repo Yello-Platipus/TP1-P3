@@ -24,15 +24,21 @@ public class CheatCommand extends Command{
 
     @Override
     protected Command parse(String[] words){
-        int command = Integer.parseInt(words[0]);
-        if(MIN_OBJ_ID <= command && command <= MAX_OBJ_ID){
-            if (words.length != 1) {
-                System.out.format("[ERROR]: Command %s: %s%n%n", NAME, INCORRECT_NUMBER_OF_ARGS_MSG);
-                return null;
-            } else {
-                this.command = command;
-                return this;
+        try {
+            command = Integer.parseInt(words[0]);
+            if(MIN_OBJ_ID <= command && command <= MAX_OBJ_ID){
+                if (words.length != 1) {
+                    System.out.format("[ERROR]: Command %s: %s%n%n", NAME, INCORRECT_NUMBER_OF_ARGS_MSG);
+                    return null;
+                } else {
+                    this.command = command;
+                    return this;
+                }
             }
+        }
+        catch (NumberFormatException e)
+        {
+            return null;
         }
         return null;
     }
