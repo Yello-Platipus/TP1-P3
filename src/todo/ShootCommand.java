@@ -21,11 +21,14 @@ public class ShootCommand extends Command implements Buyable{
         if(buy(game)){
             game.executeInstantAction(new Shot());
             game.update();
+            return true;
         }
         else{
-            System.out.println("Insufficient funds for this action");
+            System.out.println("Not enough coins\n" +
+                    "[ERROR]: Failed to shoot");
+            return false;
         }
-        return true;
+
     }
 
     @Override

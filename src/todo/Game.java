@@ -107,7 +107,7 @@ public class Game {
 		return (int)(this.random.nextDouble() * level.getWidth());
 	}
 	public int getRandomXInVisibility(){
-		return (int)(this.random.nextDouble() * (level.getVisibility() - 1));
+		return (int)(this.random.nextDouble() * level.getVisibility() );
 	}
 	public void tryToAddObject(GameObject object, double frequency){
 		if (random.nextDouble() < frequency)

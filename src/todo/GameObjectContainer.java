@@ -59,7 +59,7 @@ public class GameObjectContainer {
         for(GameObject c: gameObjects){
             c.hp = 0;
         }
-        updateObjects();
+        deleteDeadObjects();
     }
 
     public String getStringInPos(int x, int y){
