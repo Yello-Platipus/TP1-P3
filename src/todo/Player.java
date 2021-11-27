@@ -95,9 +95,11 @@ public class Player extends GameObject{
 
 	@Override
 	public void update() {
-		doCollision();
-		x++;
-		doCollision();
+		if(!doCollision()){
+			x++;
+			doCollision();
+		}
+
 	}
 
 	@Override

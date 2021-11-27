@@ -18,7 +18,7 @@ public class Thunder implements InstantAction{
         }
         else
             hasHit = false;
-        System.out.print(thunderHit()); //daniiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
+        System.out.print(thunderHit());
     }
 
     public static String thunderHit(){
