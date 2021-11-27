@@ -20,7 +20,7 @@ public class Wall extends Obstacle{
             case 1:
                 return "░";
             default:
-                return null;
+                return "";
         }
     }
 
@@ -32,6 +32,12 @@ public class Wall extends Obstacle{
 
         numObs++;
         numObjects++;
+    }
+
+    @Override
+    public boolean receiveExplosion(){
+        hp = 0;
+        return true;
     }
 
     @Override

@@ -41,6 +41,11 @@ public class Obstacle extends GameObject{
 		return true;
 	}
 
+	public boolean receiveExplosion(){
+		hp = 0;
+		return true;
+	}
+
 	@Override
 	public void onEnter() {
 		numObs++;
