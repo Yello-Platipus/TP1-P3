@@ -28,30 +28,29 @@ public class Player extends GameObject{
 		return false;
 	}
 
-	public boolean moveUp(){
+	public void moveUp(){
 		if(!doCollision()){
-			boolean movido = (y > 0);
-			if(movido)
+
+			if((y > 0))
 				y--;
 			x++;
 			doCollision();
-			return movido;
+
 		}
-		else
-			return false;
+
 	}
 
-	public boolean moveDown(){
+	public void moveDown(){
 		if(!doCollision()){
-			boolean movido = (y < game.getWidth() - 1);
-			if(movido)
+
+			if(y < game.getWidth() - 1)
 				y++;
 			x++;
 			doCollision();
-			return movido;
+
 		}
-		else
-			return false;
+
+
 	}
 
 	public void zeMato(){

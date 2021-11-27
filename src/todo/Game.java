@@ -64,11 +64,11 @@ public class Game {
 		return !player.isAlive();
 	}
 
-	public boolean moveUp() {
-		return player.moveUp();
+	public void moveUp() {
+		player.moveUp();
 	}
-	public boolean moveDown() {
-		return player.moveDown();
+	public void moveDown() {
+		player.moveDown();
 	}
 	public void move() {
 		player.update();
