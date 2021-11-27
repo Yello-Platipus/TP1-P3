@@ -2,7 +2,7 @@ package todo;
 
 public class Obstacle extends GameObject{
 
-	private static int numObs = 0;
+	protected static int numObs = 0;
 	static String INFO = "[Obstacle] hits car\n";
 
 	public Obstacle(Game game, int x, int y){
@@ -11,7 +11,7 @@ public class Obstacle extends GameObject{
 	}
 
 	public static int getNumObstacles(){
-		return numObs;
+		return numObs ;
 	}
 
 	public static void reset() {

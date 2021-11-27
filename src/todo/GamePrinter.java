@@ -68,7 +68,7 @@ public class GamePrinter {
 		ret.append("Total obstacles: " + Obstacle.getNumObstacles() + "\n");
 		ret.append("Total coins: " + Coin.getNumCoins());
 		if(SuperCoin.hasSuperCoins())
-			ret.append("\n"+ "Supercoin is present\n");
+			ret.append("\n"+ "Supercoin is present");
 		if(!this.game.getModoTest())
 			ret.append(getTime());
 

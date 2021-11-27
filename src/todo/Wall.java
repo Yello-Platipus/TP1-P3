@@ -3,7 +3,6 @@ package todo;
 public class Wall extends Obstacle{
 
     private static final int coinsOnDestroy = 5;
-    private static int numWalls = 0;
     static String INFO = "[WALL] hard obstacle\n";
 
     public Wall(Game game, int x, int y) {
@@ -26,19 +25,21 @@ public class Wall extends Obstacle{
     }
 
     public static void reset(){
-        numWalls = 0;
+
     }
 
-    @Override
+
     public void onEnter() {
-        numWalls++;
+
+        numObs++;
         numObjects++;
     }
 
     @Override
     public void onDelete() {
         game.receivePrize(coinsOnDestroy);
-        numWalls--;
+
+        numObs--;
         numObjects--;
     }
 }

@@ -20,11 +20,8 @@ public class GameObjectGenerator {
 	public static void reset(Level level) {
 		Obstacle.reset();
 		Coin.reset();
-		Wall.reset();
 		Turbo.reset();
 		SuperCoin.reset();
-		Truck.reset();
-		Pedestrian.reset();
 	}
 
 	public static void generateRuntimeObjects(Game game) {

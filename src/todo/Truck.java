@@ -4,7 +4,7 @@ public class Truck extends Obstacle{
 
     static String INFO = "[TRUCK] moves towards the player\n";
 
-    private static int numTrucks = 0;
+
 
     public Truck(Game game, int x, int y) {
         super(game, x, y);
@@ -13,12 +13,13 @@ public class Truck extends Obstacle{
     }
 
     public static void reset(){
-        numTrucks = 0;
+
     }
 
     @Override
     public void onEnter() {
-        numTrucks++;
+
+        numObs++;
         numObjects++;
     }
 
@@ -29,7 +30,8 @@ public class Truck extends Obstacle{
 
     @Override
     public void onDelete() {
-        numTrucks--;
+
+        numObs--;
         numObjects--;
     }
 }

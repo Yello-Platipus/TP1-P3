@@ -3,7 +3,7 @@ package todo;
 public class Pedestrian extends Obstacle{
 
     static String INFO = "[PEDESTRIAN] person crossing the road up and down\n";
-    private static int numPedestrians = 0;
+
     private boolean movingUp;
 
     public Pedestrian(Game game, int x, int y) {
@@ -28,12 +28,13 @@ public class Pedestrian extends Obstacle{
     }
 
     public static void reset(){
-        numPedestrians = 0;
+
     }
 
     @Override
     public void onEnter() {
-        numPedestrians++;
+
+        numObs++;
         numObjects++;
     }
 
@@ -49,7 +50,8 @@ public class Pedestrian extends Obstacle{
 
     @Override
     public void onDelete() {
-        numPedestrians--;
+
+        numObs--;
         numObjects--;
     }
 }
