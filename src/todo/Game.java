@@ -18,6 +18,7 @@ public class Game {
 
 	public Game(long seed, Level level){
 		reset(seed, level);
+		modoTest = (level == Level.TEST);
 	}
 
 	public Level getLevel(){
@@ -138,7 +139,7 @@ public class Game {
 		cycles = 0;
 		startTime = System.currentTimeMillis();
 		random = new Random(seed);
-		modoTest = (level == Level.TEST);
+
 		container = new GameObjectContainer();
 		player = new Player(this);
 		exit = false;
