@@ -28,13 +28,11 @@ public class GrenadeCommand extends Command implements Buyable{
                 game.createGrenade(new Grenade(game, x + game.getXPlayer(), y));
                 return true;
             }
-            else {
+            else
                 System.out.println("Insufficient funds for this action");
-            }
         }
-        else{
+        else
             System.out.println("Invalid position.\n[ERROR]: Failed to add grenade\n");
-        }
         return false;
     }
 
