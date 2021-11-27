@@ -6,7 +6,7 @@ public class Grenade extends GameObject{
 
     public Grenade(Game game, int x, int y) {
         super(game, x, y);
-        hp = 2;
+        hp = 3;
         symbol = "ð[3]";
     }
 
@@ -38,7 +38,7 @@ public class Grenade extends GameObject{
     @Override
     public void update() {
         hp--;
-        symbol = "ð[" + (hp + 1) + "]";
+        symbol = "ð[" + (hp) + "]";
     }
 
     @Override
