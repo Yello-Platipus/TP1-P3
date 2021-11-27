@@ -23,7 +23,7 @@ public class SuperCoin extends Coin{
     public boolean receiveCollision(Player player) {
         player.addCoin(value);
         hp--;
-        return true;
+        return false;
     }
 
     @Override

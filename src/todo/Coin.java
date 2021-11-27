@@ -28,7 +28,7 @@ public class Coin extends GameObject{
 	public boolean receiveCollision(Player player) {
 		player.addCoin(value);
 		hp--;
-		return true;
+		return false;
 	}
 
 	@Override

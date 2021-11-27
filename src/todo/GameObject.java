@@ -27,7 +27,6 @@ public abstract class GameObject implements Collider {
 		if (isAlive()) {
 			return getSymbol();
 		}
-
 		return "";
 	}
 
@@ -64,8 +63,6 @@ public abstract class GameObject implements Collider {
 	public void receiveWave() {
 		x++;
 	}
-
-	// TODO add your code
 }
 
 

@@ -31,7 +31,6 @@ public class Player extends GameObject{
 	public boolean moveUp(){
 		if(!doCollision()){
 			boolean movido = (y > 0);
-			doCollision();
 			if(movido)
 				y--;
 			x++;
