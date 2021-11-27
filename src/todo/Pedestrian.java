@@ -27,6 +27,10 @@ public class Pedestrian extends Obstacle{
         return true;
     }
 
+    public static void reset(){
+        numPedestrians = 0;
+    }
+
     @Override
     public void onEnter() {
         numPedestrians++;

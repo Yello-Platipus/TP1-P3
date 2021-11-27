@@ -12,6 +12,10 @@ public class Truck extends Obstacle{
         hp = 1;
     }
 
+    public static void reset(){
+        numTrucks = 0;
+    }
+
     @Override
     public void onEnter() {
         numTrucks++;

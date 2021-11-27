@@ -25,6 +25,10 @@ public class Wall extends Obstacle{
         }
     }
 
+    public static void reset(){
+        numWalls = 0;
+    }
+
     @Override
     public void onEnter() {
         numWalls++;

@@ -39,6 +39,10 @@ public class Turbo extends GameObject{
         numObjects++;
     }
 
+    public static void reset(){
+        numTurbos = 0;
+    }
+
     @Override
     public void update() {
 
