@@ -3,7 +3,7 @@ package todo;
 public class GameObjectGenerator {
 
 	public static void generateGameObjects(Game game, Level level) {
-		for(int x = game.getVisibility() /2; x < game.getLength(); x ++) {
+		for(int x = game.getVisibility() / 2; x < game.getLength(); x++) {
 			game.tryToAddObject(new Obstacle(game, x, game.getRandomY()), level.getObstacleFrequency());
 			game.tryToAddObject(new Coin(game, x, game.getRandomY()), level.getCoinFrequency());
 			if (level.hasAdvancedObjects()) {
