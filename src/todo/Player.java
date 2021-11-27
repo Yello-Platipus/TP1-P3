@@ -30,27 +30,20 @@ public class Player extends GameObject{
 
 	public void moveUp(){
 		if(!doCollision()){
-
 			if((y > 0))
 				y--;
 			x++;
 			doCollision();
-
 		}
-
 	}
 
 	public void moveDown(){
 		if(!doCollision()){
-
 			if(y < game.getWidth() - 1)
 				y++;
 			x++;
 			doCollision();
-
 		}
-
-
 	}
 
 	public void zeMato(){

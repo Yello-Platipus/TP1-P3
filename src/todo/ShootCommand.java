@@ -23,7 +23,7 @@ public class ShootCommand extends Command implements Buyable{
             game.update();
         }
         else{
-            System.out.println("Insufficient founds for this action");
+            System.out.println("Insufficient funds for this action");
         }
         return true;
     }
