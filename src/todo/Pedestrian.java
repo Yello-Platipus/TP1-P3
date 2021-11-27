@@ -50,7 +50,6 @@ public class Pedestrian extends Obstacle{
 
     @Override
     public void onDelete() {
-
         numObs--;
         numObjects--;
     }

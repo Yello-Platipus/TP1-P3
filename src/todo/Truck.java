@@ -4,8 +4,6 @@ public class Truck extends Obstacle{
 
     static String INFO = "[TRUCK] moves towards the player\n";
 
-
-
     public Truck(Game game, int x, int y) {
         super(game, x, y);
         symbol = "←";

@@ -28,7 +28,6 @@ public class Wall extends Obstacle{
 
     }
 
-
     public void onEnter() {
 
         numObs++;
