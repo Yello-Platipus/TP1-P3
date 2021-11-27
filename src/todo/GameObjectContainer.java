@@ -26,13 +26,14 @@ public class GameObjectContainer {
     }
 
     public void deleteDeadObjects(){
-        int i = gameObjects.size() - 1;
-        while(i >= 0){
+        int i = 0;
+        while(i < gameObjects.size()){
             if(!gameObjects.get(i).isAlive()){
                 gameObjects.get(i).onDelete();
                 gameObjects.remove(i);
             }
-            i--;
+            else
+                i++;
         }
     }
 
