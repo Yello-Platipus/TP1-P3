@@ -13,6 +13,11 @@ public class Pedestrian extends Obstacle{
     }
 
     @Override
+    public boolean receiveThunder() {
+        return false;
+    }
+
+    @Override
     public boolean receiveCollision(Player player) {
         player.zeMato();
         hp--;
