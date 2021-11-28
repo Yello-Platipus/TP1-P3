@@ -78,7 +78,7 @@ public class Game {
 		container.updateObjects();
 		GameObjectGenerator.generateRuntimeObjects(this);
 		addCycles(1);
-		container.deleteDeadObjects();
+		updateDeadObjects();
 	}
 	public void updateDeadObjects(){
 		container.deleteDeadObjects();
