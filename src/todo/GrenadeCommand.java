@@ -24,8 +24,9 @@ public class GrenadeCommand extends Command implements Buyable{
     public boolean execute(Game game) {
         if(game.getObjectInPos(game.getXPlayer() + x, y) == null){
             if(buy(game)) {
-                game.update();
                 game.createGrenade(new Grenade(game, x + game.getXPlayer(), y));
+                game.update();
+
                 return true;
             }
             else

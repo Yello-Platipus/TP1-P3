@@ -80,6 +80,9 @@ public class Game {
 		addCycles(1);
 		container.deleteDeadObjects();
 	}
+	public void updateDeadObjects(){
+		container.deleteDeadObjects();
+	}
 	public void receivePrize(int prize){
 		player.addCoin(prize);
 	}

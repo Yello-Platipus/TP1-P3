@@ -12,11 +12,13 @@ public class Explosion implements InstantAction {
 
     @Override
     public void execute(Game game) {
-        for(int i = x - radio; i <= x + radio; i++)
-            for(int j = y - radio; j <= y + radio;j++){
-                Collider objeto = game.getObjectInPos(i,j); // Collider
-                if(objeto != null)
+        for(int i = x - radio; i <= x + radio; i++) {
+            for (int j = y - radio; j <= y + radio; j++) {
+                Collider objeto = game.getObjectInPos(i, j); // Collider
+                if (objeto != null)
                     objeto.receiveExplosion();
             }
+        }
+
     }
 }

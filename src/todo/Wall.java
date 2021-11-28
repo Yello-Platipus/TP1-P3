@@ -3,6 +3,7 @@ package todo;
 public class Wall extends Obstacle{
 
     private static final int coinsOnDestroy = 5;
+    private boolean explosion = false;
     static String INFO = "[WALL] hard obstacle\n";
 
     public Wall(Game game, int x, int y) {
@@ -37,12 +38,16 @@ public class Wall extends Obstacle{
     @Override
     public boolean receiveExplosion(){
         hp = 0;
+        explosion = true;
         return true;
     }
 
     @Override
     public void onDelete() {
-        game.receivePrize(coinsOnDestroy);
+        if(!explosion){
+            game.receivePrize(coinsOnDestroy);
+        }
+
 
         numObs--;
         numObjects--;

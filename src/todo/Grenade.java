@@ -6,7 +6,7 @@ public class Grenade extends GameObject{
 
     public Grenade(Game game, int x, int y) {
         super(game, x, y);
-        hp = 3;
+        hp = 4;
         symbol = "ð[3]";
     }
 
@@ -43,7 +43,7 @@ public class Grenade extends GameObject{
 
     @Override
     public void onDelete() {
-        game.executeInstantAction(new Explosion(x, y));
+        new Explosion(x, y).execute(game);
         numObjects--;
     }
 }

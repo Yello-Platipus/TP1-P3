@@ -16,6 +16,7 @@ public class MoveDownCommand extends Command{
 
     @Override
     public boolean execute(Game game) {
+        game.updateDeadObjects();
         game.moveDown();
         game.update();
         return true;

@@ -12,10 +12,7 @@ public class Pedestrian extends Obstacle{
         movingUp = false;
     }
 
-    @Override
-    public boolean receiveThunder() {
-        return false;
-    } //dani puta
+
 
     @Override
     public boolean receiveCollision(Player player) {
