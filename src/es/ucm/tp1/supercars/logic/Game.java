@@ -147,7 +147,6 @@ public class Game {
 		cycles = 0;
 		startTime = System.currentTimeMillis();
 		random = new Random(seed);
-
 		container = new GameObjectContainer();
 		player = new Player(this);
 		exit = false;

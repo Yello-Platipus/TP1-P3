@@ -38,6 +38,7 @@ public class GamePrinter {
 	public GamePrinter(Game game) {
 		this.game = game;
 	}
+
 	private void printRoad(){
 		margin = StringUtils.repeat(SPACE, MARGIN_SIZE);
 
@@ -53,6 +54,7 @@ public class GamePrinter {
 
 		newLine =  System.getProperty("line.separator");
 	}
+
 	public String getTime(){
 		String ret = "";
 
