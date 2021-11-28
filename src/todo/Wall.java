@@ -47,8 +47,6 @@ public class Wall extends Obstacle{
         if(!explosion){
             game.receivePrize(coinsOnDestroy);
         }
-
-
         numObs--;
         numObjects--;
     }
