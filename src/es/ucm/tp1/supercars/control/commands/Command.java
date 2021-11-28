@@ -29,7 +29,7 @@ public abstract class Command {
 	};
 	/* @formatter:on */
 
-	protected static Command getCommand(String[] commandWords) {
+	public static Command getCommand(String[] commandWords) {
 		Command command = null;
 		int i = 0;
 		while(i < AVAILABLE_COMMANDS.length && command == null){

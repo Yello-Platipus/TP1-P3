@@ -14,7 +14,7 @@ public class Wall extends Obstacle{
     }
 
     @Override
-    protected String getSymbol(){
+    public String getSymbol(){
         switch(hp) {
             case 3:
                 return "█";
@@ -32,14 +32,12 @@ public class Wall extends Obstacle{
     }
 
     public void onEnter() {
-
         numObs++;
-        numObjects++;
     }
 
     @Override
     public boolean receiveExplosion(){
-        hp = 0;
+        die();
         explosion = true;
         return true;
     }
@@ -50,6 +48,5 @@ public class Wall extends Obstacle{
             game.receivePrize(coinsOnDestroy);
         }
         numObs--;
-        numObjects--;
     }
 }

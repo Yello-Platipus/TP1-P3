@@ -5,11 +5,11 @@ import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
 import java.util.ArrayList;
 
 public class GameObjectContainer {
+
     private ArrayList <GameObject> gameObjects;
 
     public GameObjectContainer() {
         gameObjects = new ArrayList <GameObject>();
-        GameObject.numObjects = 0;
     }
 
     public void addObject(GameObject object){
@@ -42,7 +42,7 @@ public class GameObjectContainer {
     public GameObject getObjectInPos(int x, int y){
         GameObject ret = null;
         int i = 0;
-        while(i < GameObject.getNumObjects() && ret == null){
+        while(i < gameObjects.size() && ret == null){
             if(gameObjects.get(i).isInPosition(x, y))
                 ret = gameObjects.get(i);
             else
@@ -54,13 +54,13 @@ public class GameObjectContainer {
     public void clearRow(int row) {
         for(GameObject c:gameObjects){
             if(c.getX() == row)
-                c.hp = 0;
+                c.die();
         }
     }
 
     public void clear() {
         for(GameObject c: gameObjects){
-            c.hp = 0;
+            c.die();
         }
         deleteDeadObjects();
     }

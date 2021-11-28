@@ -18,9 +18,7 @@ public class Truck extends Obstacle{
 
     @Override
     public void onEnter() {
-
         numObs++;
-        numObjects++;
     }
 
     @Override
@@ -30,8 +28,6 @@ public class Truck extends Obstacle{
 
     @Override
     public void onDelete() {
-
         numObs--;
-        numObjects--;
     }
 }

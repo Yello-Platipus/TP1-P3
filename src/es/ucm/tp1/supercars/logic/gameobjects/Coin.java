@@ -46,7 +46,6 @@ public class Coin extends GameObject{
 	@Override
 	public void onEnter() {
 		numCoins++;
-		numObjects++;
 	}
 
 	@Override
@@ -55,6 +54,5 @@ public class Coin extends GameObject{
 	@Override
 	public void onDelete() {
 		numCoins--;
-		numObjects--;
 	}
 }

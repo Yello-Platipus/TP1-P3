@@ -50,7 +50,7 @@ public class Player extends GameObject{
 	}
 
 	public void zeMato(){
-		hp = 0;
+		die();
 		symbol = "@";
 	}
 

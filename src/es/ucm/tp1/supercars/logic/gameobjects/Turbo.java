@@ -38,7 +38,6 @@ public class Turbo extends GameObject{
     @Override
     public void onEnter() {
 
-        numObjects++;
     }
 
     public static void reset(){
@@ -53,6 +52,5 @@ public class Turbo extends GameObject{
     @Override
     public void onDelete() {
 
-        numObjects--;
     }
 }

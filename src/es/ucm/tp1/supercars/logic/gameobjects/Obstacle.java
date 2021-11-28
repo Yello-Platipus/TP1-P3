@@ -39,19 +39,18 @@ public class Obstacle extends GameObject{
 
 	@Override
 	public boolean receiveThunder() {
-		hp = 0;
+		die();
 		return true;
 	}
 
 	public boolean receiveExplosion(){
-		hp = 0;
+		die();
 		return true;
 	}
 
 	@Override
 	public void onEnter() {
 		numObs++;
-		numObjects++;
 	}
 
 	@Override
@@ -62,6 +61,5 @@ public class Obstacle extends GameObject{
 	@Override
 	public void onDelete() {
 		numObs--;
-		numObjects--;
 	}
 }

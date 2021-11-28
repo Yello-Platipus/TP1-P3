@@ -35,7 +35,7 @@ public class Grenade extends GameObject{
 
     @Override
     public void onEnter() {
-        numObjects++;
+
     }
 
     @Override
@@ -47,6 +47,5 @@ public class Grenade extends GameObject{
     @Override
     public void onDelete() {
         new Explosion(x, y).execute(game);
-        numObjects--;
     }
 }

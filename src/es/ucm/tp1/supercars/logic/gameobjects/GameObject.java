@@ -6,7 +6,6 @@ import es.ucm.tp1.supercars.logic.Game;
 public abstract class GameObject implements Collider {
 
 	protected int x, y, hp;
-	protected static int numObjects = 0;
 
 	protected Game game;
 
@@ -19,11 +18,9 @@ public abstract class GameObject implements Collider {
 		hp = 1;
 	}
 
-	protected String getSymbol() {
+	public String getSymbol() {
 		return symbol;
 	}
-
-	public static int getNumObjects(){return numObjects;}
 
 	@Override
 	public String toString() {
@@ -65,6 +62,10 @@ public abstract class GameObject implements Collider {
 	@Override
 	public void receiveWave() {
 		x++;
+	}
+
+	public void die(){
+		hp = 0;
 	}
 }
 

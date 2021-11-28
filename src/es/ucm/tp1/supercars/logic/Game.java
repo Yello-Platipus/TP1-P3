@@ -96,7 +96,7 @@ public class Game {
 		StringBuilder icono = new StringBuilder();
 		GameObject object = getObjectInPos(x,y);
 		if(player.isInPosition(x, y))
-			icono.append(player.symbol + " ");
+			icono.append(player.getSymbol() + " ");
 		if(object != null)
 			icono.append(container.getStringInPos(x, y) + " ");
 		else if(x == getLength())

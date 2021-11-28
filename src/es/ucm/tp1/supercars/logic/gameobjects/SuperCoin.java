@@ -31,12 +31,10 @@ public class SuperCoin extends Coin{
     @Override
     public void onEnter() {
         hasSuperCoin = true;
-        numObjects++;
     }
 
     @Override
     public void onDelete() {
         hasSuperCoin = false;
-        numObjects--;
     }
 }
