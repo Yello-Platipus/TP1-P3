@@ -99,7 +99,6 @@ public class Player extends GameObject{
 			x++;
 			doCollision();
 		}
-
 	}
 
 	@Override
