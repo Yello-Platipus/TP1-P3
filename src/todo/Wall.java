@@ -35,15 +35,16 @@ public class Wall extends Obstacle{
     }
 
     @Override
+    public boolean receiveExplosion(){
+        hp = 0;
+        return true;
+    }
+
+    @Override
     public void onDelete() {
         game.receivePrize(coinsOnDestroy);
 
         numObs--;
         numObjects--;
-    }
-    @Override
-    public boolean receiveExplosion(){
-        hp = 0;
-        return true;
     }
 }
