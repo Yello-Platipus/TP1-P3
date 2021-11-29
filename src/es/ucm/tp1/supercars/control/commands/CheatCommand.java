@@ -1,5 +1,6 @@
 package es.ucm.tp1.supercars.control.commands;
 
+import es.ucm.tp1.supercars.control.exceptions.CommandParseException;
 import es.ucm.tp1.supercars.logic.Game;
 
 public class CheatCommand extends Command{
@@ -25,7 +26,7 @@ public class CheatCommand extends Command{
     }
 
     @Override
-    protected Command parse(String[] words){
+    protected Command parse(String[] words) throws CommandParseException {
         try {
             command = Integer.parseInt(words[0]);
             if(MIN_OBJ_ID <= command && command <= MAX_OBJ_ID){

@@ -1,6 +1,7 @@
 package es.ucm.tp1.supercars.control.commands;
 
 import es.ucm.tp1.supercars.control.Level;
+import es.ucm.tp1.supercars.control.exceptions.CommandParseException;
 import es.ucm.tp1.supercars.logic.Game;
 
 public class ResetCommand extends Command{
@@ -22,7 +23,7 @@ public class ResetCommand extends Command{
     }
 
     @Override
-    protected Command parse(String[] words) {
+    protected Command parse(String[] words) throws CommandParseException {
         if (matchCommandName(words[0])) {
             if(words.length == 3){
                 if(Level.valueOfIgnoreCase(words[1]) == null){

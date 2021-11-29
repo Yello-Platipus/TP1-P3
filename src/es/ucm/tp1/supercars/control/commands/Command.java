@@ -1,5 +1,7 @@
 package es.ucm.tp1.supercars.control.commands;
 
+import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
+import es.ucm.tp1.supercars.control.exceptions.CommandParseException;
 import es.ucm.tp1.supercars.logic.Game;
 
 public abstract class Command {
@@ -64,13 +66,13 @@ public abstract class Command {
 		return help;
 	}
 
-	public abstract boolean execute(Game game);
+	public abstract boolean execute(Game game) throws CommandExecuteException;
 
 	protected boolean matchCommandName(String name) {
 		return this.shortcut.equalsIgnoreCase(name) || this.name.equalsIgnoreCase(name);
 	}
 
-	protected Command parse(String[] words) {
+	protected Command parse(String[] words) throws CommandParseException {
 		if (matchCommandName(words[0])) {
 			if (words.length != 1) {
 				System.out.format("[ERROR]: Command %s: %s%n%n", name, INCORRECT_NUMBER_OF_ARGS_MSG);
