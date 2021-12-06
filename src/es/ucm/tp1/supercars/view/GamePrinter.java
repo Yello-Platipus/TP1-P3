@@ -4,7 +4,7 @@ import es.ucm.tp1.supercars.logic.Game;
 import es.ucm.tp1.supercars.logic.gameobjects.*;
 import es.ucm.tp1.supercars.utils.StringUtils;
 
-public class GamePrinter { // a
+public class GamePrinter {
 
 	private static final String SPACE = " ";
 
