@@ -45,9 +45,10 @@ public class GrenadeCommand extends Command implements Buyable {
     protected Command parse(String[] words) throws CommandParseException {
         if (matchCommandName(words[0])) {
             if (words.length != 3) {
-                System.out.format("[ERROR]: Command %s: %s%n%n", NAME, INCORRECT_NUMBER_OF_ARGS_MSG);
-                return null;
-            } else {
+                throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, INCORRECT_NUMBER_OF_ARGS_MSG));
+            }
+            else {
+
                 x = Integer.parseInt(words[1]);
                 y = Integer.parseInt(words[2]);
                 return this;

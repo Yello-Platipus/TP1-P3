@@ -31,7 +31,8 @@ public abstract class Command {
 	};
 	/* @formatter:on */
 
-	public static Command getCommand(String[] commandWords) {
+	public static Command getCommand(String[] commandWords) throws CommandParseException {
+
 		Command command = null;
 		int i = 0;
 		while(i < AVAILABLE_COMMANDS.length && command == null){
@@ -39,7 +40,7 @@ public abstract class Command {
 			i++;
 		}
 		if(command == null)
-			System.out.format("[ERROR]: %s%n%n", UNKNOWN_COMMAND_MSG);
+			throw new CommandParseException(String.format("[ERROR]: %s", UNKNOWN_COMMAND_MSG));
 		return command;
 	}
 
@@ -75,8 +76,8 @@ public abstract class Command {
 	protected Command parse(String[] words) throws CommandParseException {
 		if (matchCommandName(words[0])) {
 			if (words.length != 1) {
-				System.out.format("[ERROR]: Command %s: %s%n%n", name, INCORRECT_NUMBER_OF_ARGS_MSG);
-				return null;
+				throw new CommandParseException(String.format("[ERROR]: Command %s: %s", name, INCORRECT_NUMBER_OF_ARGS_MSG));
+
 			} else {
 				return this;
 			}

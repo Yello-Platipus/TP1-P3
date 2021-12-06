@@ -27,25 +27,24 @@ public class ResetCommand extends Command{
         if (matchCommandName(words[0])) {
             if(words.length == 3){
                 if(Level.valueOfIgnoreCase(words[1]) == null){
-                    System.out.println("[ERROR]: Command r: Level must be one of: TEST, EASY, HARD, ADVANCED\n");
-                    return null;
+                    throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, "Level must be one of: TEST, EASY, HARD, ADVANCED"));
                 }
                 else {
                     levelName = words[1];
                     seed = Long.parseLong(words[2]);
-                    return this;
+                    
                 }
             }
             else if(words.length == 1){
                 seed = -1;
                 levelName = "";
-                return this;
+
             }
             else {
-                System.out.println("[ERROR]: Command r: Incorrect number of arguments\n");
+                throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, INCORRECT_NUMBER_OF_ARGS_MSG));
             }
         }
-        return null;
+        return this;
     }
 
     @Override
