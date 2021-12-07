@@ -29,9 +29,6 @@ public class Pedestrian extends Obstacle{
         return true;
     }
 
-
-
-
     @Override
     public void update() {
         if(movingUp)

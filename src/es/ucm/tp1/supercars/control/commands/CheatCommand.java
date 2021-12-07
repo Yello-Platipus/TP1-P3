@@ -31,8 +31,7 @@ public class CheatCommand extends Command{
             command = Integer.parseInt(words[0]);
             if(MIN_OBJ_ID <= command && command <= MAX_OBJ_ID){
                 if (words.length != 1) {
-                    System.out.format("[ERROR]: Command %s: %s%n%n", NAME, INCORRECT_NUMBER_OF_ARGS_MSG);
-                    return null;
+                    throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, INCORRECT_NUMBER_OF_ARGS_MSG));
                 } else {
                     this.command = command;
                     return this;
