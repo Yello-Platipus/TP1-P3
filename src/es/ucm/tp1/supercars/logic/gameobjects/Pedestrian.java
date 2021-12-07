@@ -29,14 +29,8 @@ public class Pedestrian extends Obstacle{
         return true;
     }
 
-    public static void reset(){
 
-    }
 
-    @Override
-    public void onEnter() {
-        numObs++;
-    }
 
     @Override
     public void update() {
@@ -48,8 +42,4 @@ public class Pedestrian extends Obstacle{
             movingUp = !movingUp;
     }
 
-    @Override
-    public void onDelete() {
-        numObs--;
-    }
 }

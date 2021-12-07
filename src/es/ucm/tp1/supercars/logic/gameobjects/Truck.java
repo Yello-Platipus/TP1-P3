@@ -12,22 +12,13 @@ public class Truck extends Obstacle{
         hp = 1;
     }
 
-    public static void reset(){
 
-    }
 
-    @Override
-    public void onEnter() {
-        numObs++;
-    }
 
     @Override
     public void update() {
         x--;
     }
 
-    @Override
-    public void onDelete() {
-        numObs--;
-    }
+
 }

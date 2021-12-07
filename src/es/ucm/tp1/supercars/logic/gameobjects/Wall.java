@@ -27,13 +27,9 @@ public class Wall extends Obstacle{
         }
     }
 
-    public static void reset(){
 
-    }
 
-    public void onEnter() {
-        numObs++;
-    }
+
 
     @Override
     public boolean receiveExplosion(){
