@@ -139,9 +139,9 @@ public class Game {
 
 	public boolean outOfBounds(int x, int y){
 		if((x >= getXPlayer() && x < (getXPlayer()+ getVisibility())) && (y >= 0 && y < getWidth()) && getObjectInPos(x, y) == null){
-			return true;
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 	public void reset(long seed, Level level){

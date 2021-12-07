@@ -28,13 +28,11 @@ public class GrenadeCommand extends Command implements Buyable {
 
     @Override
     public boolean execute(Game game) {
-        if(game.getObjectInPos(game.getXPlayer() + x, y) == null){
+        if(!game.outOfBounds(x,y)){
             if(buy(game)) {
                 x = x + game.getXPlayer();
                 GameObject grenade = new Grenade(game, x, y);
-                if(game.outOfBounds(x,y)){
-                    game.addObjectContainer(grenade);
-                }
+                game.addObjectContainer(grenade);
                 game.update();
                 return true;
             }
