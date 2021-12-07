@@ -28,7 +28,7 @@ public class GrenadeCommand extends Command implements Buyable {
 
     @Override
     public boolean execute(Game game) {
-        if(!game.outOfBounds(x,y)){
+        if(!game.outOfBounds(x, y)){
             if(buy(game)) {
                 x = x + game.getXPlayer();
                 GameObject grenade = new Grenade(game, x, y);
