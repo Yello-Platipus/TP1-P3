@@ -27,10 +27,6 @@ public class Wall extends Obstacle{
         }
     }
 
-
-
-
-
     @Override
     public boolean receiveExplosion(){
         die();

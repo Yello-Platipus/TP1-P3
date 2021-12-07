@@ -24,7 +24,6 @@ public class GameObjectGenerator {
 	public static void reset(Level level) {
 		Obstacle.reset();
 		Coin.reset();
-		Turbo.reset();
 		SuperCoin.reset();
 	}
 

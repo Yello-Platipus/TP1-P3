@@ -40,10 +40,6 @@ public class Turbo extends GameObject{
 
     }
 
-    public static void reset(){
-
-    }
-
     @Override
     public void update() {
 

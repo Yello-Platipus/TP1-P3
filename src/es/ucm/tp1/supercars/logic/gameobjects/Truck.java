@@ -12,13 +12,8 @@ public class Truck extends Obstacle{
         hp = 1;
     }
 
-
-
-
     @Override
     public void update() {
         x--;
     }
-
-
 }
