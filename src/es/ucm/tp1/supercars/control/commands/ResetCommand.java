@@ -32,19 +32,19 @@ public class ResetCommand extends Command{
                 else {
                     levelName = words[1];
                     seed = Long.parseLong(words[2]);
-                    
+                    return this;
                 }
             }
             else if(words.length == 1){
                 seed = -1;
                 levelName = "";
-
+                return this;
             }
             else {
                 throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, INCORRECT_NUMBER_OF_ARGS_MSG));
             }
         }
-        return this;
+        return null;
     }
 
     @Override
