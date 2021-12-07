@@ -55,7 +55,7 @@ public class GrenadeCommand extends Command implements Buyable {
                     x = Integer.parseInt(words[1]);
                     y = Integer.parseInt(words[2]);
                 }
-                catch (NumberFormatException e){
+                catch (NumberFormatException ex){
                     throw new CommandParseException("[ERROR]: Incorrect data type introduced for grenade command: [g]renade int int");
                 }
                 return this;

@@ -1,6 +1,8 @@
 package es.ucm.tp1.supercars.control.commands;
 
 import es.ucm.tp1.supercars.control.Buyable;
+import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
+import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
 import es.ucm.tp1.supercars.logic.Game;
 import es.ucm.tp1.supercars.logic.actions.Shot;
 
@@ -21,18 +23,19 @@ public class ShootCommand extends Command implements Buyable {
     }
 
     @Override
-    public boolean execute(Game game) {
-        if(buy(game)){
-            game.executeInstantAction(new Shot());
-            game.update();
-            return true;
-        }
-        else{
-            System.out.println("Not enough coins\n" +
-                    "[ERROR]: Failed to shoot\n");
-            return false;
+    public boolean execute(Game game) throws CommandExecuteException {
+
+        try{
+            buy(game);
         }
 
+        catch (NotEnoughCoinsException ex){
+            throw new CommandExecuteException(ex.getMessage() + "[ERROR]: Failed to shoot\n");
+        }
+
+        game.executeInstantAction(new Shot());
+        game.update();
+        return true;
     }
 
     @Override
