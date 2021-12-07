@@ -1,6 +1,6 @@
 package es.ucm.tp1.supercars.control.exceptions;
 
-public class InvalidPositionException {
+public class InvalidPositionException extends Throwable {
     public InvalidPositionException() { super(); }
     public InvalidPositionException(String message) { super(message); }
     public InvalidPositionException(String message, Throwable cause) { super(message, cause); }

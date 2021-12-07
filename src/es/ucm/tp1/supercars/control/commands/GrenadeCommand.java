@@ -1,7 +1,10 @@
 package es.ucm.tp1.supercars.control.commands;
 
 import es.ucm.tp1.supercars.control.Buyable;
+import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
 import es.ucm.tp1.supercars.control.exceptions.CommandParseException;
+import es.ucm.tp1.supercars.control.exceptions.InvalidPositionException;
+import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
 import es.ucm.tp1.supercars.logic.Game;
 import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
 import es.ucm.tp1.supercars.logic.gameobjects.Grenade;
@@ -27,21 +30,24 @@ public class GrenadeCommand extends Command implements Buyable {
     }
 
     @Override
-    public boolean execute(Game game) {
-        if(!game.outOfBounds(x, y)){
-            if(buy(game)) {
-                x = x + game.getXPlayer();
-                GameObject grenade = new Grenade(game, x, y);
-                game.addObjectContainer(grenade);
-                game.update();
-                return true;
-            }
-            else
-                System.out.println("Insufficient funds for this action");
+    public boolean execute(Game game) throws CommandExecuteException {
+        try{game.outOfBounds(x, y);}
+        catch (InvalidPositionException ex){
+            throw new CommandExecuteException(ex.getMessage()+"[ERROR]: Failed to add grenade\n");
         }
-        else
-            System.out.println("Invalid position.\n[ERROR]: Failed to add grenade\n");
-        return false;
+
+        try{buy(game);}
+        catch (NotEnoughCoinsException ex) {
+            throw new CommandExecuteException(ex.getMessage());
+        }
+        x = x + game.getXPlayer();
+        GameObject grenade = new Grenade(game, x, y);
+        game.addObjectContainer(grenade);
+        game.update();
+        return true;
+
+
+
     }
 
     @Override

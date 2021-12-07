@@ -1,6 +1,7 @@
 package es.ucm.tp1.supercars.logic;
 
 import es.ucm.tp1.supercars.control.Level;
+import es.ucm.tp1.supercars.control.exceptions.InvalidPositionException;
 import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
 import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
 import es.ucm.tp1.supercars.logic.actions.InstantAction;
@@ -138,11 +139,10 @@ public class Game {
 		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
 	}
 
-	public boolean outOfBounds(int x, int y){
-		if((x >= getXPlayer() && x < (getXPlayer()+ getVisibility())) && (y >= 0 && y < getWidth()) && getObjectInPos(x, y) == null){
-			return false;
+	public void outOfBounds(int x, int y)throws InvalidPositionException {
+		if(!((x >= getXPlayer() && x < (getXPlayer()+ getVisibility())) && (y >= 0 && y < getWidth()) && getObjectInPos(x, y) == null)){
+			throw new InvalidPositionException("Invalid position.\n");
 		}
-		return true;
 	}
 
 	public void reset(long seed, Level level){
