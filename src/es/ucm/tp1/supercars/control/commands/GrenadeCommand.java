@@ -32,7 +32,7 @@ public class GrenadeCommand extends Command implements Buyable {
             if(buy(game)) {
                 x = x + game.getXPlayer();
                 GameObject grenade = new Grenade(game, x, y);
-                if((x >= game.getXPlayer() && x < (game.getXPlayer()+ game.getVisibility())) && (y >= 0 && y < game.getWidth()) && game.getObjectInPos(x, y) == null){
+                if(game.outOfBounds(x,y)){
                     game.addObjectContainer(grenade);
                 }
                 game.update();

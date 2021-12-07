@@ -126,15 +126,23 @@ public class Game {
 	public GameObject getObjectInPos(int x, int y){
 		return container.getObjectInPos(x, y);
 	}
+
 	public void forceAddObject(GameObject o) {
 		container.clearRow((player.getX() + level.getVisibility() - 1));
 		updateDeadObjects();
 		addObjectContainer(o);
 	}
+
 	public void forceAdvancedObject(int command) {
 		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
 	}
 
+	public boolean outOfBounds(int x, int y){
+		if((x >= getXPlayer() && x < (getXPlayer()+ getVisibility())) && (y >= 0 && y < getWidth()) && getObjectInPos(x, y) == null){
+			return true;
+		}
+		return false;
+	}
 
 	public void reset(long seed, Level level){
 		this.seed = seed;
