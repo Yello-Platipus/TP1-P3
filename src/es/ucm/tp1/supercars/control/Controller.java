@@ -41,7 +41,7 @@ public class Controller {
 			String[] parameters = s.toLowerCase().trim().split(" ");
 			System.out.println("[DEBUG] Executing: " + s);
 			try{
-			Command command = Command.getCommand(parameters);
+				Command command = Command.getCommand(parameters);
 				refreshDisplay = command.execute(game);
 			}
 			catch (GameException ex){
