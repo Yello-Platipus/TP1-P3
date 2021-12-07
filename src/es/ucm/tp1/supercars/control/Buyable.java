@@ -6,13 +6,15 @@ import es.ucm.tp1.supercars.logic.Game;
 public interface Buyable {
 
     public int cost();
-    public default boolean buy(Game game) throws NotEnoughCoinsException {
-        if(game.tryToBuy(cost())){
-            return true;
+    public default void buy(Game game) throws NotEnoughCoinsException {
+
+        try{
+            game.tryToBuy(cost());
         }
-        else{
-            throw new NotEnoughCoinsException("Not enough coins\n");
+        catch (NotEnoughCoinsException ex){
+            throw new NotEnoughCoinsException(ex.getMessage());
         }
+
     };
 
 }

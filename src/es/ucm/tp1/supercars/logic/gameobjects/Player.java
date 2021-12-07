@@ -1,5 +1,6 @@
 package es.ucm.tp1.supercars.logic.gameobjects;
 
+import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
 import es.ucm.tp1.supercars.logic.Collider;
 import es.ucm.tp1.supercars.logic.Game;
 
@@ -23,12 +24,14 @@ public class Player extends GameObject{
 	public void addCoin(int coinValue){
 		numCoins+=coinValue;
 	}
-	public boolean decreaseCoins(int coins){
+	public void decreaseCoins(int coins)throws NotEnoughCoinsException {
+
 		if(numCoins >= coins){
 			numCoins -= coins;
-			return true;
 		}
-		return false;
+		else{
+			throw new NotEnoughCoinsException("Not enough coins\n");
+		}
 	}
 
 	public void moveUp(){

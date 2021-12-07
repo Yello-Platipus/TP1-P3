@@ -1,7 +1,10 @@
 package es.ucm.tp1.supercars.control.commands;
 
 import es.ucm.tp1.supercars.control.Buyable;
+import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
+import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
 import es.ucm.tp1.supercars.logic.Game;
+import es.ucm.tp1.supercars.logic.actions.Shot;
 import es.ucm.tp1.supercars.logic.actions.Wave;
 
 public class WaveCommand extends Command implements Buyable {
@@ -21,14 +24,17 @@ public class WaveCommand extends Command implements Buyable {
     }
 
     @Override
-    public boolean execute(Game game) {
-        if(buy(game)) {
-            game.executeInstantAction(new Wave());
-            game.update();
+    public boolean execute(Game game) throws CommandExecuteException {
+
+        try{
+            buy(game);
         }
-        else{
-            System.out.println("Insufficient funds for this action");
+        catch (NotEnoughCoinsException ex){
+            throw new CommandExecuteException(ex.getMessage());
         }
+
+        game.executeInstantAction(new Wave());
+        game.update();
         return true;
     }
 

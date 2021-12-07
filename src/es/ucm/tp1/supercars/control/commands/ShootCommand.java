@@ -28,7 +28,6 @@ public class ShootCommand extends Command implements Buyable {
         try{
             buy(game);
         }
-
         catch (NotEnoughCoinsException ex){
             throw new CommandExecuteException(ex.getMessage() + "[ERROR]: Failed to shoot\n");
         }
