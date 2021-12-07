@@ -11,12 +11,12 @@ public enum Level {
 	private double obstacleFrequency;
 	private double advObjFrequency;
 
-	public int getLength() {return this.length;}
-	public int getWidth() {return this.width;}
-	public int getVisibility() {return this.visibility;}
-	public double getCoinFrequency() {return this.coinFrequency;}
-	public double getObstacleFrequency() {return this.obstacleFrequency;}
-	public double getAdvObjFrequency() {return this.advObjFrequency;}
+	public int getLength() {return length;}
+	public int getWidth() {return width;}
+	public int getVisibility() {return visibility;}
+	public double getCoinFrequency() {return coinFrequency;}
+	public double getObstacleFrequency() {return obstacleFrequency;}
+	public double getAdvObjFrequency() {return advObjFrequency;}
 
 	// Hemos quitado el private porque daba un aviso que decia que era redundante
 	Level(int length, int width, int visibility, double obstacleFrequency, double coinFrequency, double advObjFrequency) {

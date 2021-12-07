@@ -61,7 +61,7 @@ public class GamePrinter {
 		if(game.getCycles() == 0)
 			ret = "\n"+ "Elapsed Time: 0.00 s";
 		else
-			ret = ("\n"+ "Elapsed Time: " + ((double)System.currentTimeMillis() - this.game.getStartTime()) / 1000) + " s";
+			ret = ("\n"+ "Elapsed Time: " + ((double)System.currentTimeMillis() - game.getStartTime()) / 1000) + " s";
 
 		return ret;
 	}
@@ -75,7 +75,7 @@ public class GamePrinter {
 		ret.append("Total coins: " + Coin.getNumCoins());
 		if(SuperCoin.hasSuperCoins())
 			ret.append("\n"+ "Supercoin is present");
-		if(!this.game.getModoTest())
+		if(!game.getModoTest())
 			ret.append(getTime());
 
 		return ret.toString();

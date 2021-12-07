@@ -18,7 +18,7 @@ public class Player extends GameObject{
 		return x >= game.getLength() + 1;
 	}
 	public int getNumCoins(){
-		return this.numCoins;
+		return numCoins;
 	}
 	public void addCoin(int coinValue){
 		numCoins+=coinValue;
