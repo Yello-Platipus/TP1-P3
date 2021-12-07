@@ -127,7 +127,7 @@ public class Game {
 	}
 	public void forceAddObject(GameObject o) {
 		container.clearRow((player.getX() + level.getVisibility() - 1));
-		container.deleteDeadObjects();
+		updateDeadObjects();
 		container.addObject(o);
 	}
 	public void forceAdvancedObject(int command) {
