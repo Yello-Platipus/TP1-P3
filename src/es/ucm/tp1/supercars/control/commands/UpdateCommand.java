@@ -20,7 +20,6 @@ public class UpdateCommand extends Command {
 
 	@Override
 	public boolean execute(Game game) {
-		game.updateDeadObjects();
 		game.move();
 		game.update();
 		return true;

@@ -8,27 +8,18 @@ public class Thunder implements InstantAction{
     private static int y;
 
     private static boolean hasHit = false;
-    private static String hitObject;
 
     @Override
     public void execute(Game game) {
         x = game.getRandomXInVisibility();
         y = game.getRandomY();
         GameObject o = game.getObjectInPos(game.getXPlayer() + x, y);
-        if(o != null) {
-            hitObject = o.getSymbol();
+        System.out.print("Thunder hit position: (" + x + " , " + y + ")");
+        if(o != null)
             hasHit = o.receiveThunder();
-        }
-        else
+        else {
             hasHit = false;
-        System.out.print(thunderHit());
-    }
-
-    public static String thunderHit(){
-        String ret = "Thunder hit position: (" + x + " , " + y + ")";
-        if(hasHit)
-            return ret + " -> " + hitObject + "\n";
-        else
-            return ret + "\n";
+            System.out.println();
+        }
     }
 }

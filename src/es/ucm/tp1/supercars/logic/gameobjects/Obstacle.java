@@ -39,6 +39,7 @@ public class Obstacle extends GameObject{
 
 	@Override
 	public boolean receiveThunder() {
+		System.out.println(" -> " + symbol);
 		die();
 		return true;
 	}
