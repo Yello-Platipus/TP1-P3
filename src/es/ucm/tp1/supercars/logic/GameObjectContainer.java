@@ -72,4 +72,11 @@ public class GameObjectContainer {
                 objects.append(c.toString() + " ");
         return objects.toString().trim();
     }
+
+    public String serialization(){
+        StringBuilder ret = new StringBuilder();
+        for(){
+
+        }
+    }
 }
