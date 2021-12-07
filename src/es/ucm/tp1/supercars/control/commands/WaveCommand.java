@@ -1,6 +1,7 @@
 package es.ucm.tp1.supercars.control.commands;
 
 import es.ucm.tp1.supercars.control.Buyable;
+import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
 import es.ucm.tp1.supercars.logic.Game;
 import es.ucm.tp1.supercars.logic.actions.Wave;
 
@@ -21,7 +22,7 @@ public class WaveCommand extends Command implements Buyable {
     }
 
     @Override
-    public boolean execute(Game game) {
+    public boolean execute(Game game) throws CommandExecuteException {
         if(buy(game)) {
             game.executeInstantAction(new Wave());
             game.update();
