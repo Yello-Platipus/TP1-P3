@@ -49,7 +49,9 @@ public class Coin extends GameObject{
 	}
 
 	@Override
-	public void update() {/*MUDA MUDA MUDA MUDA MUDA MUDA*/}
+	public void update() {
+
+	}
 
 	@Override
 	public void onDelete() {

@@ -58,7 +58,7 @@ public class Player extends GameObject{
 		numCoins = 0;
 	}
 
-	public void pickUpTurbo(int boost){
+	public void noCollisionMovement(int boost){
 		x += boost;
 	}
 

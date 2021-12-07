@@ -21,7 +21,7 @@ public class Turbo extends GameObject{
 
     @Override
     public boolean receiveCollision(Player player) {
-        player.pickUpTurbo(boost);
+        player.noCollisionMovement(boost);
         return false;
     }
 
