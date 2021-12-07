@@ -3,6 +3,7 @@ package es.ucm.tp1.supercars.control.commands;
 import es.ucm.tp1.supercars.control.Buyable;
 import es.ucm.tp1.supercars.control.exceptions.CommandParseException;
 import es.ucm.tp1.supercars.logic.Game;
+import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
 import es.ucm.tp1.supercars.logic.gameobjects.Grenade;
 
 public class GrenadeCommand extends Command implements Buyable {
@@ -29,7 +30,11 @@ public class GrenadeCommand extends Command implements Buyable {
     public boolean execute(Game game) {
         if(game.getObjectInPos(game.getXPlayer() + x, y) == null){
             if(buy(game)) {
-                game.createGrenade(new Grenade(game, x + game.getXPlayer(), y));
+                x = x + game.getXPlayer();
+                GameObject grenade = new Grenade(game, x, y);
+                if((x >= game.getXPlayer() && x < (game.getXPlayer()+ game.getVisibility())) && (y >= 0 && y < game.getWidth()) && game.getObjectInPos(x, y) == null){
+                    game.addObjectContainer(grenade);
+                }
                 game.update();
                 return true;
             }

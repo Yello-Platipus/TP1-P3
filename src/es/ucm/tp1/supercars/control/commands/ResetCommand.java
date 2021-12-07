@@ -44,7 +44,7 @@ public class ResetCommand extends Command{
                 throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, INCORRECT_NUMBER_OF_ARGS_MSG));
             }
         }
-        return this;
+        return null;
     }
 
     @Override

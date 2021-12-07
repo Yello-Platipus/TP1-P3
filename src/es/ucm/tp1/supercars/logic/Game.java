@@ -88,6 +88,7 @@ public class Game {
 	public void updateDeadObjects(){
 		container.deleteDeadObjects();
 	}
+	public void addObjectContainer(GameObject o){container.addObject(o);}
 	public void receivePrize(int prize){
 		player.addCoin(prize);
 	}
@@ -119,7 +120,7 @@ public class Game {
 	}
 	public void tryToAddObject(GameObject object, double frequency){
 		if (random.nextDouble() < frequency)
-			container.addObject(object);
+			addObjectContainer(object);
 	}
 
 	public GameObject getObjectInPos(int x, int y){
@@ -128,18 +129,12 @@ public class Game {
 	public void forceAddObject(GameObject o) {
 		container.clearRow((player.getX() + level.getVisibility() - 1));
 		updateDeadObjects();
-		container.addObject(o);
+		addObjectContainer(o);
 	}
 	public void forceAdvancedObject(int command) {
 		GameObjectGenerator.forceAdvancedObject(this, command, getXPlayer() + getVisibility() - 1);
 	}
-	public boolean createGrenade(GameObject grenade){
-		if((grenade.getX() >= getXPlayer() && grenade.getX() < (getXPlayer()+ getVisibility())) && (grenade.getY() >= 0 && grenade.getY() < getWidth()) && getObjectInPos(grenade.getX(), grenade.getY()) == null){
-			container.addObject(grenade);
-			return true;
-		}
-		return false;
-	}
+
 
 	public void reset(long seed, Level level){
 		this.seed = seed;
