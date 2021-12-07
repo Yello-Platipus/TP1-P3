@@ -48,12 +48,16 @@ public class GrenadeCommand extends Command implements Buyable {
     protected Command parse(String[] words) throws CommandParseException {
         if (matchCommandName(words[0])) {
             if (words.length != 3) {
-                throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, INCORRECT_NUMBER_OF_ARGS_MSG));
+                throw new CommandParseException("[ERROR]: Incorrect number of arguments for grenade command: [g]renade <x> <y>");
             }
             else {
-
-                x = Integer.parseInt(words[1]);
-                y = Integer.parseInt(words[2]);
+                try{
+                    x = Integer.parseInt(words[1]);
+                    y = Integer.parseInt(words[2]);
+                }
+                catch (NumberFormatException e){
+                    throw new CommandParseException("[ERROR]: Incorrect data type introduced for grenade command: [g]renade int int");
+                }
                 return this;
             }
         }
