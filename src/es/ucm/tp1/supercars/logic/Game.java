@@ -186,10 +186,10 @@ public class Game {
 		}
 	}
 
-	public void saveRecord(){
+	public void saveRecord(){//TODO
 
 	}
-	public void initRecord(){
+	public void initRecord(){//TODO
 
 	}
 	public String getRecord(){
