@@ -27,7 +27,7 @@ public class GameSerializer {
         StringBuilder sb = new StringBuilder(HEADER);
         sb.append("Level: " + game.getLevel().toString() + "\n");
         sb.append("Cycles: " + game.getCycles() + "\n");
-        sb.append("Coins: " + game.getNumCoins() + "\n");
+        sb.append("Coins: " + game.getNumCoins());
         sb.append(getTime() + "\n");
         sb.append("Game Objects:\n");
         sb.append(containerSerialization() + "\n");
