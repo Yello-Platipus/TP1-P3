@@ -13,11 +13,11 @@ public class SaveCommand extends Command{
 
     private static final String NAME = "save";
 
-    private static final String DETAILS = "[sa]ve ";
+    private static final String DETAILS = "sa[v]e ";
 
-    private static final String SHORTCUT = "sa";
+    private static final String SHORTCUT = "v";
 
-    private static final String HELP = "save the game";
+    private static final String HELP = "Save the state of the game to a file.";
 
     String nameFile;
 
@@ -52,6 +52,6 @@ public class SaveCommand extends Command{
             throw new CommandExecuteException(ioe.getMessage());
         }
         System.out.println("Game successfully saved in file "+nameFile+".txt\n");
-        return true;
+        return false;
     }
 }

@@ -26,10 +26,12 @@ public abstract class Command {
 		new ShootCommand(),
 		new GrenadeCommand(),
 		new WaveCommand(),
-		new ClearCommand(),
-		new CheatCommand(),
 		new SerializeCommand(),
-		new SaveCommand()
+		new SaveCommand(),
+		new DumpCommand(),
+		new ClearCommand(),
+		new CheatCommand()
+
 	};
 	/* @formatter:on */
 
