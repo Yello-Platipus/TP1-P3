@@ -43,7 +43,7 @@ public class SaveCommand extends Command{
     @Override
     public boolean execute(Game game) throws CommandExecuteException {
         try{
-            BufferedWriter save = new BufferedWriter(new FileWriter(nameFile+".txt"));
+            BufferedWriter save = new BufferedWriter(new FileWriter(nameFile + ".txt"));
             save.write("Super cars 3.0\n\n");
             save.write(game.serializer());
             save.close();
@@ -51,7 +51,7 @@ public class SaveCommand extends Command{
         catch (IOException ioe){
             throw new CommandExecuteException(ioe.getMessage());
         }
-        System.out.println("Game successfully saved in file "+nameFile+".txt\n");
+        System.out.println("Game successfully saved in file " + nameFile + ".txt\n");
         return false;
     }
 }
