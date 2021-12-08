@@ -19,7 +19,7 @@ public class SerializeCommand extends Command{
 
     @Override
     public boolean execute(Game game) throws CommandExecuteException {
-        game.serializer();
+        System.out.println(game.serializer());
         return false;
     }
 }

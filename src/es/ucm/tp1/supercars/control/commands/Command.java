@@ -27,7 +27,8 @@ public abstract class Command {
 		new GrenadeCommand(),
 		new WaveCommand(),
 		new ClearCommand(),
-		new CheatCommand()
+		new CheatCommand(),
+		new SerializeCommand()
 	};
 	/* @formatter:on */
 
