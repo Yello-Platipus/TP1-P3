@@ -14,6 +14,13 @@ public class Grenade extends GameObject{
     }
 
     @Override
+    public String serialize(){
+        StringBuilder ret = new StringBuilder(toString());
+        ret.append(" (" + x + ", " + y + ") " + hp + "\n");
+        return ret.toString();
+    }
+
+    @Override
     public boolean doCollision() {
         return false;
     }

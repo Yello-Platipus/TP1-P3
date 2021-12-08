@@ -3,6 +3,8 @@ package es.ucm.tp1.supercars.logic.gameobjects;
 import es.ucm.tp1.supercars.logic.Collider;
 import es.ucm.tp1.supercars.logic.Game;
 
+import java.util.AbstractQueue;
+
 public abstract class GameObject implements Collider {
 
 	protected int x, y, hp;
@@ -28,6 +30,12 @@ public abstract class GameObject implements Collider {
 			return getSymbol();
 		}
 		return "";
+	}
+
+	public String serialize(){
+		StringBuilder ret = new StringBuilder(toString());
+		ret.append(" (" + x + ", " + y + ")\n");
+		return ret.toString();
 	}
 
 	public boolean isInPosition(int x, int y) {

@@ -14,6 +14,13 @@ public class Wall extends Obstacle{
     }
 
     @Override
+    public String serialize(){
+        StringBuilder ret = new StringBuilder(toString());
+        ret.append(" (" + x + ", " + y + ") " + hp + "\n");
+        return ret.toString();
+    }
+
+    @Override
     public String getSymbol(){
         switch(hp) {
             case 3:

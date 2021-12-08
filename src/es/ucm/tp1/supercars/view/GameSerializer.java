@@ -30,8 +30,16 @@ public class GameSerializer {
         sb.append("Coins: " + game.getNumCoins() + "\n");
         sb.append("ElapsedTime: " + getTime() + "\n");
         sb.append("Game Objects:\n");
-
+        sb.append(containerSerialization() + "\n");
         return sb.toString();
+    }
+
+    public String containerSerialization(){
+        StringBuilder builder = new StringBuilder();
+        for(int i = 0; i < game.getLength(); i++)
+            for(int j = 0; j < game.getWidth(); j++)
+                builder.append(game.serializePosition(i, j));
+        return builder.toString();
     }
 
 }

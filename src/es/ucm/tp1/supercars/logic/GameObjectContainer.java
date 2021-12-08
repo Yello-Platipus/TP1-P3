@@ -73,10 +73,11 @@ public class GameObjectContainer {
         return objects.toString().trim();
     }
 
-    public String serialization(){
+    public String serialization(int x, int y){
         StringBuilder ret = new StringBuilder();
-        for(){
-
-        }
+        for(GameObject o : gameObjects)
+            if(o.isInPosition(x, y))
+                ret.append(o.serialize());
+        return  ret.toString();
     }
 }

@@ -15,6 +15,17 @@ public class Pedestrian extends Obstacle{
     }
 
     @Override
+    public String serialize(){
+        StringBuilder ret = new StringBuilder(toString());
+        ret.append(" (" + x + ", " + y + ") ");
+        if(movingUp)
+            ret.append("up\n");
+        else
+            ret.append("down\n");
+        return ret.toString();
+    }
+
+    @Override
     public boolean receiveCollision(Player player) {
         player.zeMato();
         hp--;

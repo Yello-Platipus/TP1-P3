@@ -1,11 +1,13 @@
 package es.ucm.tp1.supercars.logic;
 
 import es.ucm.tp1.supercars.control.Level;
+import es.ucm.tp1.supercars.control.commands.SerializeCommand;
 import es.ucm.tp1.supercars.control.exceptions.InvalidPositionException;
 import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
 import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
 import es.ucm.tp1.supercars.logic.actions.InstantAction;
 import es.ucm.tp1.supercars.logic.gameobjects.Player;
+import es.ucm.tp1.supercars.view.GameSerializer;
 
 import java.util.Random;
 
@@ -22,6 +24,7 @@ public class Game {
 	private boolean modoTest;
 	private Random random;
 	private GameObjectContainer container;
+	private GameSerializer serializer;
 
 	public Game(long seed, Level level){
 		reset(seed, level);
@@ -128,11 +131,16 @@ public class Game {
 	public GameObject getObjectInPos(int x, int y){
 		return container.getObjectInPos(x, y);
 	}
-
 	public void forceAddObject(GameObject o) {
 		container.clearRow((player.getX() + level.getVisibility() - 1));
 		updateDeadObjects();
 		addObjectContainer(o);
+	}
+	public String serializePosition(int x, int y){
+		return container.serialization(x, y);
+	}
+	public String serializer(){
+		return serializer.serialize();
 	}
 
 	public void forceAdvancedObject(int command) {
@@ -152,6 +160,7 @@ public class Game {
 		startTime = System.currentTimeMillis();
 		random = new Random(seed);
 		container = new GameObjectContainer();
+		serializer = new GameSerializer(this);
 		player = new Player(this);
 		exit = false;
 		GameObjectGenerator.reset(level);
