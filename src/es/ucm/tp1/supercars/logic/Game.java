@@ -21,11 +21,11 @@ public class Game {
 	private long seed;
 	private int cycles;
 	private long startTime;
-	private long currentLevelRecord;
 	private boolean modoTest;
 	private Random random;
 	private GameObjectContainer container;
 	private GameSerializer serializer;
+	private Record record;
 
 	public Game(long seed, Level level){
 		reset(seed, level);
@@ -186,15 +186,15 @@ public class Game {
 		}
 	}
 
-	public void saveRecord(){//TODO
+	public void saveRecord(){ //TODO
 
 	}
-	public void initRecord(){//TODO
+	public void initRecord(){ //TODO
 
 	}
 	public String getRecord(){
 		StringBuilder ret = new StringBuilder(level.toString() + " record is ");
-		ret.append(currentLevelRecord / 100 + " s\n");
+		ret.append(record.getRecord() / 100 + " s\n");
 		return ret.toString();
 	}
 }
