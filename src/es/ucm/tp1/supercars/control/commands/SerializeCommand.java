@@ -11,7 +11,7 @@ public class SerializeCommand extends Command{
 
     private static final String SHORTCUT = "z";
 
-    private static final String HELP = "Serializes the game";
+    private static final String HELP = "Serializes the game.";
 
     public SerializeCommand() {
         super(NAME, SHORTCUT, DETAILS, HELP);

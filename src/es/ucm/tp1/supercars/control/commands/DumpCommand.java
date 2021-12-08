@@ -6,6 +6,7 @@ import es.ucm.tp1.supercars.logic.Game;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class DumpCommand extends Command{
     private static final String NAME = "dump";
@@ -42,10 +43,11 @@ public class DumpCommand extends Command{
         try{
             BufferedReader save = new BufferedReader(new FileReader(nameFile+".txt"));
 
-            int i = save.read();
-            while(i!=-1){
-                System.out.print((char)i);
-                i=save.read();
+            Scanner myReader = new Scanner(save);
+
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
             }
             save.close();
         }
