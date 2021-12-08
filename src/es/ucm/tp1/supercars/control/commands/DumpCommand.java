@@ -54,7 +54,6 @@ public class DumpCommand extends Command{
         catch (IOException ioe){
             throw new CommandExecuteException(ioe.getMessage());
         }
-
         return true;
     }
 }
