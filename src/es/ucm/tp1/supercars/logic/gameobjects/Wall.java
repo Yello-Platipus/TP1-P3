@@ -42,6 +42,13 @@ public class Wall extends Obstacle{
     }
 
     @Override
+    public boolean receiveThunder() {
+        System.out.println(" -> " + symbol);
+        die();
+        return true;
+    }
+
+    @Override
     public void onDelete() {
         if(!explosion){
             game.receivePrize(coinsOnDestroy);
