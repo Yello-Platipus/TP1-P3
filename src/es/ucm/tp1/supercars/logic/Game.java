@@ -2,6 +2,7 @@ package es.ucm.tp1.supercars.logic;
 
 import es.ucm.tp1.supercars.control.Level;
 import es.ucm.tp1.supercars.control.commands.SerializeCommand;
+import es.ucm.tp1.supercars.control.exceptions.InputOutputRecordException;
 import es.ucm.tp1.supercars.control.exceptions.InvalidPositionException;
 import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
 import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
@@ -166,6 +167,12 @@ public class Game {
 		exit = false;
 		GameObjectGenerator.reset(level);
 		GameObjectGenerator.generateGameObjects(this, level);
+		try{
+			record = new Record(level);
+		} catch (InputOutputRecordException iore){
+			System.out.println("When opening a file the program has found an error. Ending game.");
+			exit = true;
+		}
 	}
 
 	public void executeInstantAction(InstantAction action){
@@ -186,15 +193,10 @@ public class Game {
 		}
 	}
 
-	public void saveRecord(){ //TODO
-
+	public void initRecord() throws InputOutputRecordException { //TODO
+		record.searchRecord();
 	}
-	public void initRecord(){ //TODO
-
-	}
-	public String getRecord(){
-		StringBuilder ret = new StringBuilder(level.toString() + " record is ");
-		ret.append(record.getRecord() / 100 + " s\n");
-		return ret.toString();
+	public long getRecord(){
+		return record.getRecord();
 	}
 }

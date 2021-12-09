@@ -41,8 +41,8 @@ public class DumpCommand extends Command{
     @Override
     public boolean execute(Game game) throws CommandExecuteException {
         try{
-            BufferedReader save = new BufferedReader(new FileReader(nameFile+".txt"));
 
+            BufferedReader save = new BufferedReader(new FileReader(nameFile+".txt"));
             Scanner myReader = new Scanner(save);
 
             while (myReader.hasNextLine()) {

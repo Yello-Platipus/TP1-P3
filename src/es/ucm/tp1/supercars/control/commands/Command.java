@@ -30,8 +30,8 @@ public abstract class Command {
 		new SaveCommand(),
 		new DumpCommand(),
 		new ClearCommand(),
-		new CheatCommand()
-
+		new CheatCommand(),
+		new ShowRecordCommand()
 	};
 	/* @formatter:on */
 

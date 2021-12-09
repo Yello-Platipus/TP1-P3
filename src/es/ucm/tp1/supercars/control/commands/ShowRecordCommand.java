@@ -19,7 +19,7 @@ public class ShowRecordCommand extends Command{
 
     @Override
     public boolean execute(Game game) throws CommandExecuteException {
-        System.out.println(game.getRecord());
+        System.out.format(game.getLevel().toString() + " record is %.2f s\n", (double)game.getRecord() / 1000);
         return false;
     }
 }
