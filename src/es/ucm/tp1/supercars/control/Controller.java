@@ -47,8 +47,6 @@ public class Controller {
 			catch (GameException ex){
 				System.out.format(ex.getMessage() + "%n");// tal vez tenga que poner un %n
 			}
-
-
 		}
 		if (refreshDisplay) {
 			printGame();

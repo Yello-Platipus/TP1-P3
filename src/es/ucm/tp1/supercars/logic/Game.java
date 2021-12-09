@@ -22,6 +22,7 @@ public class Game {
 	private long seed;
 	private int cycles;
 	private long startTime;
+	private long endTime;
 	private boolean modoTest;
 	private Random random;
 	private GameObjectContainer container;
@@ -91,6 +92,14 @@ public class Game {
 		GameObjectGenerator.generateRuntimeObjects(this);
 		addCycles(1);
 		updateDeadObjects();
+		if(player.hasArrived()) {
+			endTime = System.currentTimeMillis() - startTime;
+			try{
+				saveRecord();
+			} catch (InputOutputRecordException iore){
+				System.out.println("No se que poner aqui, pero el guardado ha dado error\n");
+			}
+		}
 	}
 	public void updateDeadObjects(){
 		container.deleteDeadObjects();
@@ -193,8 +202,8 @@ public class Game {
 		}
 	}
 
-	public void initRecord() throws InputOutputRecordException { //TODO
-		record.searchRecord();
+	public void saveRecord() throws InputOutputRecordException{
+		record.saveRecord(endTime);
 	}
 	public long getRecord(){
 		return record.getRecord();

@@ -33,23 +33,26 @@ public class Record {
             recordTime = Long.MAX_VALUE;
     }
 
-    public void saveRecord() throws InputOutputRecordException{
+    public void saveRecord(long newRecord) throws InputOutputRecordException{
         File file = new File(RECORD_FILENAME);
         StringBuilder sb = new StringBuilder();
+        BufferedWriter save;
         try{
             scanner = new Scanner(file);
-            BufferedWriter save = new BufferedWriter(new FileWriter(RECORD_FILENAME));
+            while(scanner.findInLine(level.toString() + ":") == null && scanner.hasNextLine()){
+                sb.append(scanner.nextLine() + "\n");
+            }
+            sb.append(level.toString() + ":" + newRecord + "\n");
+            if(scanner.hasNextLine())
+                scanner.nextLine();
+            while(scanner.hasNextLine())
+                sb.append(scanner.nextLine() + "\n");
+            save = new BufferedWriter(new FileWriter(RECORD_FILENAME));
+            save.write(sb.toString());
+            save.close();
         } catch (IOException ioe){
             throw new InputOutputRecordException();
         }
-        while(scanner.findInLine(level.toString() + ":") == null && scanner.hasNextLine()){
-            sb.append(scanner.nextLine());
-            System.out.println(sb.toString()); //TODO QUITARLO, ES SOLO PARA PROBAR SI FUNCIONA
-        }
-        if(scanner.hasNextLong())
-            recordTime = scanner.nextLong();
-        else
-            recordTime = Long.MAX_VALUE;
     }
 
     public long getRecord(){
