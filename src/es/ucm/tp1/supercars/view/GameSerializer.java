@@ -27,10 +27,10 @@ public class GameSerializer {
         StringBuilder sb = new StringBuilder(HEADER);
         sb.append("Level: " + game.getLevel().toString() + "\n");
         sb.append("Cycles: " + game.getCycles() + "\n");
-        sb.append("Coins: " + game.getNumCoins()+ "\n");
+        sb.append("Coins: " + game.getNumCoins());
         if(!game.getModoTest())
-            sb.append(getTime()+ "\n");
-        sb.append("Game Objects: \n");
+            sb.append(getTime());
+        sb.append("\n"+"Game Objects: \n");
         sb.append(containerSerialization() + "\n");
         return sb.toString();
     }
