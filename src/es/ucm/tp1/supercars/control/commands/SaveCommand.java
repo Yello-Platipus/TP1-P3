@@ -51,7 +51,7 @@ public class SaveCommand extends Command{
         catch (IOException ioe){
             throw new CommandExecuteException(ioe.getMessage());
         }
-        System.out.println("Game successfully saved in file " + nameFile + ".txt\n");
+        System.out.println("Game successfully saved to file " + nameFile + ".txt");
         return false;
     }
 }

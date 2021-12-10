@@ -52,8 +52,8 @@ public class DumpCommand extends Command{
             save.close();
         }
         catch (IOException ioe){
-            throw new CommandExecuteException(ioe.getMessage());
+            throw new CommandExecuteException("An error ocurred on reading a file");
         }
-        return true;
+        return false;
     }
 }

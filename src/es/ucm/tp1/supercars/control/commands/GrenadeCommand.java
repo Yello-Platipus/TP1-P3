@@ -31,6 +31,7 @@ public class GrenadeCommand extends Command implements Buyable {
 
     @Override
     public boolean execute(Game game) throws CommandExecuteException {
+        x = x + game.getXPlayer();
         try{game.outOfBounds(x, y);}
         catch (InvalidPositionException ex){
             throw new CommandExecuteException(ex.getMessage()+"[ERROR]: Failed to add grenade\n");
@@ -40,7 +41,7 @@ public class GrenadeCommand extends Command implements Buyable {
         catch (NotEnoughCoinsException ex) {
             throw new CommandExecuteException(ex.getMessage());
         }
-        x = x + game.getXPlayer();
+
         GameObject grenade = new Grenade(game, x, y);
         game.addObjectContainer(grenade);
         game.update();
@@ -54,7 +55,7 @@ public class GrenadeCommand extends Command implements Buyable {
     protected Command parse(String[] words) throws CommandParseException {
         if (matchCommandName(words[0])) {
             if (words.length != 3) {
-                throw new CommandParseException("[ERROR]: Incorrect number of arguments for grenade command: [g]renade <x> <y>");
+                throw new CommandParseException("[ERROR]: Incorrect number of arguments for grenade command: [g]renade <x> <y>\n");
             }
             else {
                 try{

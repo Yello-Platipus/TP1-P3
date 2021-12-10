@@ -31,7 +31,12 @@ public class ResetCommand extends Command{
                 }
                 else {
                     levelName = words[1];
-                    seed = Long.parseLong(words[2]);
+                    try {
+                        seed = Long.parseLong(words[2]);
+                    }
+                    catch (NumberFormatException exc){
+                        throw new CommandParseException("[ERROR]: Command "+ SHORTCUT + ": the seed is not a proper long number\n");
+                    }
                     return this;
                 }
             }
