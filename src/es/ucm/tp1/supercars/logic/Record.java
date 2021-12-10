@@ -31,7 +31,7 @@ public class Record {
             recordTime = scanner.nextLong();
         else {
             recordTime = Long.MAX_VALUE;
-            System.out.println("Creating default record for level '" + level.toString() + "'\n");
+            System.out.println("Creating default record for level '" + level.toString() + "'");
         }
     }
 
