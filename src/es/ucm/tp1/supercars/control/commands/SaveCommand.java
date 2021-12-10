@@ -13,7 +13,7 @@ public class SaveCommand extends Command{
 
     private static final String NAME = "save";
 
-    private static final String DETAILS = "sa[v]e ";
+    private static final String DETAILS = "sa[v]e <filename>";
 
     private static final String SHORTCUT = "v";
 

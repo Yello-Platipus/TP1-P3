@@ -29,9 +29,10 @@ public abstract class Command {
 		new SerializeCommand(),
 		new SaveCommand(),
 		new DumpCommand(),
+		new ShowRecordCommand(),
 		new ClearCommand(),
-		new CheatCommand(),
-		new ShowRecordCommand()
+		new CheatCommand()
+
 	};
 	/* @formatter:on */
 
@@ -44,7 +45,7 @@ public abstract class Command {
 			i++;
 		}
 		if(command == null)
-			throw new CommandParseException(String.format("[ERROR]: %s", UNKNOWN_COMMAND_MSG));
+			throw new CommandParseException(String.format("[ERROR]: %s\n", UNKNOWN_COMMAND_MSG));
 		return command;
 	}
 

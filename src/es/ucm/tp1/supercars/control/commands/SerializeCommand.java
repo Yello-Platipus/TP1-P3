@@ -7,11 +7,11 @@ public class SerializeCommand extends Command{
 
     private static final String NAME = "serialize";
 
-    private static final String DETAILS = "Serialize [z]";
+    private static final String DETAILS = "seriali[z]e";
 
     private static final String SHORTCUT = "z";
 
-    private static final String HELP = "Serializes the game.";
+    private static final String HELP = "Serializes the board.";
 
     public SerializeCommand() {
         super(NAME, SHORTCUT, DETAILS, HELP);

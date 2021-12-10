@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class DumpCommand extends Command{
     private static final String NAME = "dump";
 
-    private static final String DETAILS = "[d]ump";
+    private static final String DETAILS = "[d]ump <filename>";
 
     private static final String SHORTCUT = "d";
 

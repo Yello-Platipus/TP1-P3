@@ -27,7 +27,7 @@ public class ResetCommand extends Command{
         if (matchCommandName(words[0])) {
             if(words.length == 3){
                 if(Level.valueOfIgnoreCase(words[1]) == null){
-                    throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, "Level must be one of: TEST, EASY, HARD, ADVANCED"));
+                    throw new CommandParseException(String.format("[ERROR]: Command %s: %s\n", SHORTCUT, "Level must be one of: TEST, EASY, HARD, ADVANCED"));
                 }
                 else {
                     levelName = words[1];
@@ -41,7 +41,7 @@ public class ResetCommand extends Command{
                 return this;
             }
             else {
-                throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, INCORRECT_NUMBER_OF_ARGS_MSG));
+                throw new CommandParseException(String.format("[ERROR]: Command %s: %s\n", SHORTCUT, INCORRECT_NUMBER_OF_ARGS_MSG));
             }
         }
         return null;
