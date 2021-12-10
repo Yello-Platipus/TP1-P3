@@ -29,8 +29,10 @@ public class Record {
         }
         if(scanner.hasNextLong())
             recordTime = scanner.nextLong();
-        else
+        else {
             recordTime = Long.MAX_VALUE;
+            System.out.println("Creating default record for level '" + level.toString() + "'\n");
+        }
     }
 
     public void saveRecord(long newRecord) throws InputOutputRecordException{
