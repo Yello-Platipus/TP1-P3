@@ -27,11 +27,16 @@ public class ResetCommand extends Command{
         if (matchCommandName(words[0])) {
             if(words.length == 3){
                 if(Level.valueOfIgnoreCase(words[1]) == null){
-                    throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, "Level must be one of: TEST, EASY, HARD, ADVANCED"));
+                    throw new CommandParseException(String.format("[ERROR]: Command %s: %s\n", SHORTCUT, "Level must be one of: TEST, EASY, HARD, ADVANCED"));
                 }
                 else {
                     levelName = words[1];
-                    seed = Long.parseLong(words[2]);
+                    try {
+                        seed = Long.parseLong(words[2]);
+                    }
+                    catch (NumberFormatException exc){
+                        throw new CommandParseException("[ERROR]: Command "+ SHORTCUT + ": the seed is not a proper long number\n");
+                    }
                     return this;
                 }
             }
@@ -41,7 +46,7 @@ public class ResetCommand extends Command{
                 return this;
             }
             else {
-                throw new CommandParseException(String.format("[ERROR]: Command %s: %s", NAME, INCORRECT_NUMBER_OF_ARGS_MSG));
+                throw new CommandParseException(String.format("[ERROR]: Command %s: %s\n", SHORTCUT, INCORRECT_NUMBER_OF_ARGS_MSG));
             }
         }
         return null;

@@ -11,7 +11,7 @@ public class ShowRecordCommand extends Command{
 
     private static final String SHORTCUT = "o";
 
-    private static final String HELP = "Shows the record for the current level";
+    private static final String HELP = "show level record";
 
     public ShowRecordCommand() {
         super(NAME, SHORTCUT, DETAILS, HELP);

@@ -43,7 +43,7 @@ public class Wall extends Obstacle{
 
     @Override
     public boolean receiveThunder() {
-        System.out.println(" -> " + symbol);
+        System.out.println(" -> " + getSymbol());
         die();
         return true;
     }

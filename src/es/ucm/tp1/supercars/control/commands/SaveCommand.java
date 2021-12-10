@@ -13,7 +13,7 @@ public class SaveCommand extends Command{
 
     private static final String NAME = "save";
 
-    private static final String DETAILS = "sa[v]e ";
+    private static final String DETAILS = "sa[v]e <filename>";
 
     private static final String SHORTCUT = "v";
 
@@ -51,7 +51,7 @@ public class SaveCommand extends Command{
         catch (IOException ioe){
             throw new CommandExecuteException(ioe.getMessage());
         }
-        System.out.println("Game successfully saved in file " + nameFile + ".txt\n");
+        System.out.println("Game successfully saved to file " + nameFile + ".txt");
         return false;
     }
 }

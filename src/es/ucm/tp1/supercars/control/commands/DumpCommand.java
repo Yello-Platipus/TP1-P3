@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class DumpCommand extends Command{
     private static final String NAME = "dump";
 
-    private static final String DETAILS = "[d]ump";
+    private static final String DETAILS = "[d]ump <filename>";
 
     private static final String SHORTCUT = "d";
 
@@ -52,8 +52,8 @@ public class DumpCommand extends Command{
             save.close();
         }
         catch (IOException ioe){
-            throw new CommandExecuteException(ioe.getMessage());
+            throw new CommandExecuteException("An error ocurred on reading a file\n");
         }
-        return true;
+        return false;
     }
 }

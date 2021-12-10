@@ -16,9 +16,9 @@ public class GameSerializer {
         String ret = "";
 
         if(game.getCycles() == 0)
-            ret = "\n"+ "Elapsed Time: 0";
+            ret = "\n"+ "EllapsedTime: 0";
         else
-            ret = ("\n"+ "Elapsed Time: " + ((double)System.currentTimeMillis() - game.getStartTime()) / 1000) + " s";
+            ret = ("\n"+ "EllapsedTime:" + ((double)System.currentTimeMillis() - game.getStartTime()) / 1000) + " s";
 
         return ret;
     }
@@ -28,8 +28,9 @@ public class GameSerializer {
         sb.append("Level: " + game.getLevel().toString() + "\n");
         sb.append("Cycles: " + game.getCycles() + "\n");
         sb.append("Coins: " + game.getNumCoins());
-        sb.append(getTime() + "\n");
-        sb.append("Game Objects:\n");
+        if(!game.getModoTest())
+            sb.append(getTime());
+        sb.append("\n"+"Game Objects: \n");
         sb.append(containerSerialization() + "\n");
         return sb.toString();
     }
@@ -39,7 +40,7 @@ public class GameSerializer {
         for(int i = 0; i < game.getLength(); i++)
             for(int j = 0; j < game.getWidth(); j++)
                 builder.append(game.serializePosition(i, j));
-        return builder.toString();
+        return builder.toString().trim();
     }
 
 }

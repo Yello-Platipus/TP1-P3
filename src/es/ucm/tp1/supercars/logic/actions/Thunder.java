@@ -15,8 +15,12 @@ public class Thunder implements InstantAction{
         y = game.getRandomY();
         GameObject o = game.getObjectInPos(game.getXPlayer() + x, y);
         System.out.print("Thunder hit position: (" + x + " , " + y + ")");
-        if(o != null)
+        if(o != null) {
             hasHit = o.receiveThunder();
+           if(!hasHit){
+               System.out.println();
+           }
+        }
         else {
             hasHit = false;
             System.out.println();
