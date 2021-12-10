@@ -57,6 +57,15 @@ public class Player extends GameObject{
 		symbol = "@";
 	}
 
+	@Override
+	public String serialize(){
+		StringBuilder ret = new StringBuilder(toString());
+		if(isInPosition(x, y)){
+			ret.append(" (" + x + ", " + y + ")\n");
+		}
+		return ret.toString();
+	}
+
 	public void penalty(){
 		numCoins = 0;
 	}

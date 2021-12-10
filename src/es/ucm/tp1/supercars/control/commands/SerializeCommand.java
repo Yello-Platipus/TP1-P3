@@ -2,8 +2,11 @@ package es.ucm.tp1.supercars.control.commands;
 
 import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
 import es.ucm.tp1.supercars.logic.Game;
+import es.ucm.tp1.supercars.view.GameSerializer;
 
 public class SerializeCommand extends Command{
+
+    private GameSerializer serializer;
 
     private static final String NAME = "serialize";
 
@@ -19,7 +22,8 @@ public class SerializeCommand extends Command{
 
     @Override
     public boolean execute(Game game) throws CommandExecuteException {
-        System.out.println(game.serializer());
+        serializer = new GameSerializer(game);
+        System.out.println(serializer.serialize());
         return false;
     }
 }

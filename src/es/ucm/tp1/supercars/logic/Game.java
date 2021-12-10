@@ -26,7 +26,6 @@ public class Game {
 	private boolean modoTest;
 	private Random random;
 	private GameObjectContainer container;
-	private GameSerializer serializer;
 	private Record record;
 
 	public Game(long seed, Level level){
@@ -148,10 +147,10 @@ public class Game {
 		addObjectContainer(o);
 	}
 	public String serializePosition(int x, int y){
-		return container.serialization(x, y);
-	}
-	public String serializer(){
-		return serializer.serialize();
+		StringBuilder sb = new StringBuilder();
+		sb.append(player.serialize());
+		sb.append(container.serialization(x, y));
+		return sb.toString();
 	}
 
 	public void forceAdvancedObject(int command) {
@@ -171,7 +170,6 @@ public class Game {
 		startTime = System.currentTimeMillis();
 		random = new Random(seed);
 		container = new GameObjectContainer();
-		serializer = new GameSerializer(this);
 		player = new Player(this);
 		exit = false;
 		GameObjectGenerator.reset(level);
