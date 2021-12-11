@@ -21,17 +21,17 @@ public class Record {
         File file = new File(RECORD_FILENAME);
         try {
             scanner = new Scanner(file);
+            while(scanner.findInLine(level.toString() + ":") == null && scanner.hasNextLine()){
+                scanner.nextLine();
+            }
+            if(scanner.hasNextLong())
+                recordTime = scanner.nextLong();
+            else {
+                recordTime = Long.MAX_VALUE;
+                System.out.println("Creating default record for level '" + level.toString() + "'");
+            }
         } catch (FileNotFoundException fnfe){
             throw new InputOutputRecordException();
-        }
-        while(scanner.findInLine(level.toString() + ":") == null && scanner.hasNextLine()){
-            scanner.nextLine();
-        }
-        if(scanner.hasNextLong())
-            recordTime = scanner.nextLong();
-        else {
-            recordTime = Long.MAX_VALUE;
-            System.out.println("Creating default record for level '" + level.toString() + "'");
         }
     }
 
