@@ -57,11 +57,10 @@ public class Player extends GameObject{
 		symbol = "@";
 	}
 
-	@Override
-	public String serialize(){
-		StringBuilder ret = new StringBuilder(toString());
+	public String serialize(int x, int y){
+		StringBuilder ret = new StringBuilder();
 		if(isInPosition(x, y)){
-			ret.append(" (" + x + ", " + y + ")\n");
+			ret.append(toString() + " (" + x + ", " + y + ")\n");
 		}
 		return ret.toString();
 	}
