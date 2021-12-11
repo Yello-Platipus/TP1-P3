@@ -7,14 +7,7 @@ public interface Buyable {
 
     public int cost();
     public default void buy(Game game) throws NotEnoughCoinsException {
-
-        try{
-            game.tryToBuy(cost());
-        }
-        catch (NotEnoughCoinsException ex){
-            throw new NotEnoughCoinsException(ex.getMessage());
-        }
-
+        game.tryToBuy(cost());
     }
 
 }

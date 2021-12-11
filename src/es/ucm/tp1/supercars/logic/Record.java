@@ -32,7 +32,7 @@ public class Record {
             }
             scanner.close();
         } catch (FileNotFoundException fnfe){
-            throw new InputOutputRecordException();
+            throw new InputOutputRecordException(fnfe.getMessage());
         }
     }
 
@@ -55,7 +55,7 @@ public class Record {
             save.write(sb.toString());
             save.close();
         } catch (IOException ioe){
-            throw new InputOutputRecordException();
+            throw new InputOutputRecordException(ioe.getMessage());
         }
     }
 

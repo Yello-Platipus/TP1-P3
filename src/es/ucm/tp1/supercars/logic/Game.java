@@ -1,6 +1,7 @@
 package es.ucm.tp1.supercars.logic;
 
 import es.ucm.tp1.supercars.control.Level;
+import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
 import es.ucm.tp1.supercars.control.exceptions.InputOutputRecordException;
 import es.ucm.tp1.supercars.control.exceptions.InvalidPositionException;
 import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
@@ -172,7 +173,7 @@ public class Game {
 			record = new Record(level);
 		} catch (InputOutputRecordException iore){
 			// Hemos usado esta manera de salir del juego porque no teniamos ningun ejemplo de como se debia hacer
-			System.out.println("When opening a file the program has found an error. Ending game.");
+			System.out.println(iore.getMessage());
 			exit = true;
 		}
 	}
@@ -189,10 +190,7 @@ public class Game {
 		player.penalty();
 	}
 	public void tryToBuy(int coins)throws NotEnoughCoinsException {
-		try{ player.decreaseCoins(coins);}
-		catch (NotEnoughCoinsException ex){
-			throw new NotEnoughCoinsException(ex.getMessage());
-		}
+		player.decreaseCoins(coins);
 	}
 
 	public void saveRecord() throws InputOutputRecordException{
