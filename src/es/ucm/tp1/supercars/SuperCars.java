@@ -1,8 +1,8 @@
 package es.ucm.tp1.supercars;
 
 import es.ucm.tp1.supercars.control.Controller;
-import es.ucm.tp1.supercars.logic.Game;
 import es.ucm.tp1.supercars.control.Level;
+import es.ucm.tp1.supercars.logic.Game;
 
 import java.util.Scanner;
 

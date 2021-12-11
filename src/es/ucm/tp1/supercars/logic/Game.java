@@ -1,12 +1,11 @@
 package es.ucm.tp1.supercars.logic;
 
 import es.ucm.tp1.supercars.control.Level;
-import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
 import es.ucm.tp1.supercars.control.exceptions.InputOutputRecordException;
 import es.ucm.tp1.supercars.control.exceptions.InvalidPositionException;
 import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
-import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
 import es.ucm.tp1.supercars.logic.actions.InstantAction;
+import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
 import es.ucm.tp1.supercars.logic.gameobjects.Player;
 
 import java.util.Random;

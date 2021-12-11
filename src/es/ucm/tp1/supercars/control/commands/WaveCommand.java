@@ -4,7 +4,6 @@ import es.ucm.tp1.supercars.control.Buyable;
 import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
 import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
 import es.ucm.tp1.supercars.logic.Game;
-import es.ucm.tp1.supercars.logic.actions.Shot;
 import es.ucm.tp1.supercars.logic.actions.Wave;
 
 public class WaveCommand extends Command implements Buyable {

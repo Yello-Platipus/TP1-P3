@@ -3,8 +3,6 @@ package es.ucm.tp1.supercars.logic.gameobjects;
 import es.ucm.tp1.supercars.logic.Collider;
 import es.ucm.tp1.supercars.logic.Game;
 
-import java.util.AbstractQueue;
-
 public abstract class GameObject implements Collider {
 
 	protected int x, y, hp;
