@@ -189,10 +189,7 @@ public class Game {
 		player.penalty();
 	}
 	public void tryToBuy(int coins)throws NotEnoughCoinsException {
-		try{ player.decreaseCoins(coins);}
-		catch (NotEnoughCoinsException ex){
-			throw new NotEnoughCoinsException(ex.getMessage());
-		}
+		player.decreaseCoins(coins);
 	}
 
 	public void saveRecord() throws InputOutputRecordException{
