@@ -4,8 +4,8 @@ import es.ucm.tp1.supercars.control.Level;
 import es.ucm.tp1.supercars.control.exceptions.InputOutputRecordException;
 import es.ucm.tp1.supercars.control.exceptions.InvalidPositionException;
 import es.ucm.tp1.supercars.control.exceptions.NotEnoughCoinsException;
-import es.ucm.tp1.supercars.logic.actions.InstantAction;
 import es.ucm.tp1.supercars.logic.gameobjects.GameObject;
+import es.ucm.tp1.supercars.logic.actions.InstantAction;
 import es.ucm.tp1.supercars.logic.gameobjects.Player;
 
 import java.util.Random;
@@ -84,14 +84,18 @@ public class Game {
 	public void move() {
 		player.update();
 	}
-	public void update() throws InputOutputRecordException {
+	public void update(){
 		container.updateObjects();
 		GameObjectGenerator.generateRuntimeObjects(this);
 		addCycles(1);
 		updateDeadObjects();
 		if(player.hasArrived()) {
 			endTime = System.currentTimeMillis() - startTime;
-			saveRecord();
+			try{
+				saveRecord();
+			} catch (InputOutputRecordException iore){
+				System.out.println("No se que poner aqui, pero el guardado ha dado error\n");
+			}
 		}
 	}
 	public void updateDeadObjects(){
@@ -171,7 +175,6 @@ public class Game {
 		try{
 			record = new Record(level);
 		} catch (InputOutputRecordException iore){
-			// Hemos usado esta manera de salir del juego porque no teniamos ningun ejemplo de como se debia hacer
 			System.out.println("When opening a file the program has found an error. Ending game.");
 			exit = true;
 		}
