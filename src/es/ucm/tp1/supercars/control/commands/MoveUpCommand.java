@@ -1,5 +1,6 @@
 package es.ucm.tp1.supercars.control.commands;
 
+import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
 import es.ucm.tp1.supercars.logic.Game;
 
 public class MoveUpCommand extends Command{
@@ -17,7 +18,7 @@ public class MoveUpCommand extends Command{
     }
 
     @Override
-    public boolean execute(Game game) {
+    public boolean execute(Game game) throws CommandExecuteException {
         game.updateDeadObjects();
 
         game.moveUp();
