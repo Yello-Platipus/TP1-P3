@@ -4,6 +4,7 @@ package es.ucm.tp1.supercars.control.commands;
 import es.ucm.tp1.supercars.control.exceptions.CommandExecuteException;
 import es.ucm.tp1.supercars.control.exceptions.CommandParseException;
 import es.ucm.tp1.supercars.logic.Game;
+import es.ucm.tp1.supercars.view.GameSerializer;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -42,10 +43,11 @@ public class SaveCommand extends Command{
 
     @Override
     public boolean execute(Game game) throws CommandExecuteException {
+        GameSerializer serializer = new GameSerializer(game);
         try{
             BufferedWriter save = new BufferedWriter(new FileWriter(nameFile + ".txt"));
             save.write("Super cars 3.0\n\n");
-            save.write(game.serializer());
+            save.write(serializer.serialize());
             save.close();
         }
         catch (IOException ioe){
