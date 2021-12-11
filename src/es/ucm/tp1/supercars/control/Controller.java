@@ -45,7 +45,7 @@ public class Controller {
 				refreshDisplay = command.execute(game);
 			}
 			catch (GameException ex){
-				System.out.format(ex.getMessage() + "%n");// tal vez tenga que poner un %n
+				System.out.format(ex.getMessage() + "%n");
 			}
 		}
 		if (refreshDisplay) {

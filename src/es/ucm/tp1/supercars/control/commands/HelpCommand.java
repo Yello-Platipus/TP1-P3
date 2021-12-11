@@ -20,7 +20,7 @@ public class HelpCommand extends Command {
 	public boolean execute(Game game) {
 		StringBuilder buffer = new StringBuilder("Available commands:\n");
 		Command[] commands = getAvailableCommands();
-		for(Command x:commands){ // "for optimizado", sugerido por IntelliJIdea
+		for(Command x:commands){
 			buffer.append(x.getDetails() + ": " + x.getHelp() + "\n");
 		}
 		System.out.print(buffer.toString());

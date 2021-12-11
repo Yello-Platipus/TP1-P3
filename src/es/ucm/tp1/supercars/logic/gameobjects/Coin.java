@@ -6,7 +6,7 @@ public class Coin extends GameObject{
 
 	private static int numCoins = 0;
 	private static final int value = 1;
-	public static String INFO = "[Coin] gives 1 coin to the player\n";
+	public static final String INFO = "[Coin] gives 1 coin to the player\n";
 
 	public Coin(Game game, int x, int y){
 		super(game, x, y);

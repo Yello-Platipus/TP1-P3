@@ -15,6 +15,6 @@ public interface Buyable {
             throw new NotEnoughCoinsException(ex.getMessage());
         }
 
-    };
+    }
 
 }

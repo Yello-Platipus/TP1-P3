@@ -6,8 +6,8 @@ import es.ucm.tp1.supercars.logic.Game;
 
 public abstract class Command {
 
-	protected static int MAX_OBJ_ID = 5;
-	protected static int MIN_OBJ_ID = 1;
+	protected static final int MAX_OBJ_ID = 5;
+	protected static final int MIN_OBJ_ID = 1;
 
 	private static final String UNKNOWN_COMMAND_MSG = "Unknown command";
 

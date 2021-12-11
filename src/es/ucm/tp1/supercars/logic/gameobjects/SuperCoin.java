@@ -6,7 +6,7 @@ public class SuperCoin extends Coin{
 
     private static boolean hasSuperCoin = false;
     private static final int value = 1000;
-    public static String INFO = "[SUPERCOIN] gives 1000 coins\n";
+    public static final String INFO = "[SUPERCOIN] gives 1000 coins\n";
 
     public SuperCoin(Game game, int x, int y){
         super(game, x, y);

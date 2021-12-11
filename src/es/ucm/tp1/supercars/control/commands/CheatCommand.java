@@ -13,7 +13,7 @@ public class CheatCommand extends Command{
 
     private static final String HELP = "Removes all elements of last visible column, and adds an Advanced Object";
 
-    private static int command;
+    private int command;
 
     public CheatCommand() {
         super(NAME, SHORTCUT, DETAILS, HELP);

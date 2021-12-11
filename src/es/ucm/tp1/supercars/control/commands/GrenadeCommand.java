@@ -19,7 +19,7 @@ public class GrenadeCommand extends Command implements Buyable {
 
     private static final String HELP = "add a grenade in position x, y";
 
-    private int coinUsage = 3;
+    private static final int coinUsage = 3;
 
     private int x;
 

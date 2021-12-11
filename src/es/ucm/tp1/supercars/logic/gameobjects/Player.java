@@ -7,7 +7,7 @@ import es.ucm.tp1.supercars.logic.Game;
 public class Player extends GameObject{
 
 	private int numCoins;
-	public static String INFO = "[Car] the racing car\n";
+	public static final String INFO = "[Car] the racing car\n";
 
 	public Player(Game game){
 		super(game, 0, game.getWidth() / 2);

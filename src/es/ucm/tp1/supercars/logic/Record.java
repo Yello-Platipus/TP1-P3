@@ -30,6 +30,7 @@ public class Record {
                 recordTime = Long.MAX_VALUE;
                 System.out.println("Creating default record for level '" + level.toString() + "'");
             }
+            scanner.close();
         } catch (FileNotFoundException fnfe){
             throw new InputOutputRecordException();
         }
@@ -49,6 +50,7 @@ public class Record {
                 scanner.nextLine();
             while(scanner.hasNextLine())
                 sb.append(scanner.nextLine() + "\n");
+            scanner.close();
             save = new BufferedWriter(new FileWriter(RECORD_FILENAME));
             save.write(sb.toString());
             save.close();

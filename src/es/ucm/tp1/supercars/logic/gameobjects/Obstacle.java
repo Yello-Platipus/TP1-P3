@@ -5,7 +5,7 @@ import es.ucm.tp1.supercars.logic.Game;
 public class Obstacle extends GameObject{
 
 	protected static int numObs = 0;
-	public static String INFO = "[Obstacle] hits car\n";
+	public static final String INFO = "[Obstacle] hits car\n";
 
 	public Obstacle(Game game, int x, int y){
 		super(game, x, y);

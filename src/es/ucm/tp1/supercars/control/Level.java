@@ -18,7 +18,6 @@ public enum Level {
 	public double getObstacleFrequency() {return obstacleFrequency;}
 	public double getAdvObjFrequency() {return advObjFrequency;}
 
-	// Hemos quitado el private porque daba un aviso que decia que era redundante
 	Level(int length, int width, int visibility, double obstacleFrequency, double coinFrequency, double advObjFrequency) {
 		this.length = length;
 		this.width = width;

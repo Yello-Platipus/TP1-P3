@@ -6,7 +6,7 @@ public class Wall extends Obstacle{
 
     private static final int coinsOnDestroy = 5;
     private boolean explosion = false;
-    public static String INFO = "[WALL] hard obstacle\n";
+    public static final String INFO = "[WALL] hard obstacle\n";
 
     public Wall(Game game, int x, int y) {
         super(game, x, y);

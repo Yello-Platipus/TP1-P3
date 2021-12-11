@@ -4,7 +4,7 @@ import es.ucm.tp1.supercars.logic.Game;
 
 public class Pedestrian extends Obstacle{
 
-    public static String INFO = "[PEDESTRIAN] person crossing the road up and down\n";
+    public static final String INFO = "[PEDESTRIAN] person crossing the road up and down\n";
 
     private boolean movingUp;
 

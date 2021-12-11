@@ -6,7 +6,7 @@ public class Turbo extends GameObject{
 
     private static int boost;
 
-    public static String INFO = "[TURBO] pushes the car: 3 columns\n";
+    public static final String INFO = "[TURBO] pushes the car: 3 columns\n";
 
     public Turbo(Game game, int x, int y) {
         super(game, x, y);

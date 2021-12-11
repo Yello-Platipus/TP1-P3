@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class Game {
 
-	static String FINISH_LANE = "¦";
+	static final String FINISH_LANE = "¦";
 
 	private Level level;
 	private Player player;

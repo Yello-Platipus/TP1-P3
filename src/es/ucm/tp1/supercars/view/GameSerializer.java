@@ -16,7 +16,7 @@ public class GameSerializer {
         String ret = "";
 
         if(game.getCycles() == 0)
-            ret = "\n"+ "EllapsedTime: 0";
+            ret = "\n"+ "EllapsedTime: 0"; // Elapsed*
         else
             ret = ("\n"+ "EllapsedTime:" + ((double)System.currentTimeMillis() - game.getStartTime()) / 1000) + " s";
 

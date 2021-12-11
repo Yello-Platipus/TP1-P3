@@ -5,7 +5,7 @@ import es.ucm.tp1.supercars.logic.actions.Explosion;
 
 public class Grenade extends GameObject{
 
-    public static String INFO = "[GRENADE] Explodes in 3 cycles, harming everyone around\n";
+    public static final String INFO = "[GRENADE] Explodes in 3 cycles, harming everyone around\n";
 
     public Grenade(Game game, int x, int y) {
         super(game, x, y);

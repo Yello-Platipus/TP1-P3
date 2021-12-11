@@ -16,7 +16,7 @@ public class ShootCommand extends Command implements Buyable {
 
     private static final String HELP = "shoot bullet";
 
-    private static int coinUsage = 1;
+    private static final int coinUsage = 1;
 
     public ShootCommand() {
         super(NAME, SHORTCUT, DETAILS, HELP);
