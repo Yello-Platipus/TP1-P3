@@ -172,7 +172,7 @@ public class Game {
 			record = new Record(level);
 		} catch (InputOutputRecordException iore){
 			// Hemos usado esta manera de salir del juego porque no teniamos ningun ejemplo de como se debia hacer
-			System.out.println("When opening a file the program has found an error. Ending game.");
+			System.out.println(iore.getMessage());
 			exit = true;
 		}
 	}
