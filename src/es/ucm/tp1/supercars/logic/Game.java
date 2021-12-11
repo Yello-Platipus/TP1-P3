@@ -142,7 +142,7 @@ public class Game {
 	}
 	public String serializePosition(int x, int y){
 		StringBuilder sb = new StringBuilder();
-		sb.append(player.serialize());
+		sb.append(player.serialize(x, y));
 		sb.append(container.serialization(x, y));
 		return sb.toString();
 	}

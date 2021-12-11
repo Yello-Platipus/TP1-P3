@@ -32,7 +32,7 @@ public class Record {
             }
             scanner.close();
         } catch (FileNotFoundException fnfe){
-            throw new InputOutputRecordException(fnfe.getMessage());
+            throw new InputOutputRecordException();
         }
     }
 
