@@ -171,7 +171,6 @@ public class Game {
 		try{
 			record = new Record(level);
 		} catch (InputOutputRecordException iore){
-			// Hemos usado esta manera de salir del juego porque no teniamos ningun ejemplo de como se debia hacer
 			System.out.println(iore.getMessage());
 			exit = true;
 		}

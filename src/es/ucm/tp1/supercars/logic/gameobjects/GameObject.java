@@ -43,9 +43,7 @@ public abstract class GameObject implements Collider {
 	public int getX() {
 		return x;
 	}
-	public void increaseX(){
-		x++;
-	}
+
 	public int getY() {
 		return y;
 	}
