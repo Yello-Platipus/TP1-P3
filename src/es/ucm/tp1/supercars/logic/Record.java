@@ -37,25 +37,27 @@ public class Record {
     }
 
     public void saveRecord(long newRecord) throws InputOutputRecordException{
-        File file = new File(RECORD_FILENAME);
-        StringBuilder sb = new StringBuilder();
-        BufferedWriter save;
-        try{
-            scanner = new Scanner(file);
-            while(scanner.findInLine(level.toString() + ":") == null && scanner.hasNextLine()){
-                sb.append(scanner.nextLine() + "\n");
+        if (newRecord > recordTime) {
+            File file = new File(RECORD_FILENAME);
+            StringBuilder sb = new StringBuilder();
+            BufferedWriter save;
+            try{
+                scanner = new Scanner(file);
+                while(scanner.findInLine(level.toString() + ":") == null && scanner.hasNextLine()){
+                    sb.append(scanner.nextLine() + "\n");
+                }
+                sb.append(level.toString() + ":" + newRecord + "\n");
+                if(scanner.hasNextLine())
+                    scanner.nextLine();
+                while(scanner.hasNextLine())
+                    sb.append(scanner.nextLine() + "\n");
+                scanner.close();
+                save = new BufferedWriter(new FileWriter(RECORD_FILENAME));
+                save.write(sb.toString());
+                save.close();
+            } catch (IOException ioe){
+                throw new InputOutputRecordException(ioe.getMessage());
             }
-            sb.append(level.toString() + ":" + newRecord + "\n");
-            if(scanner.hasNextLine())
-                scanner.nextLine();
-            while(scanner.hasNextLine())
-                sb.append(scanner.nextLine() + "\n");
-            scanner.close();
-            save = new BufferedWriter(new FileWriter(RECORD_FILENAME));
-            save.write(sb.toString());
-            save.close();
-        } catch (IOException ioe){
-            throw new InputOutputRecordException(ioe.getMessage());
         }
     }
 
