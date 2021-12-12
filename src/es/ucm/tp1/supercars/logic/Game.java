@@ -89,8 +89,8 @@ public class Game {
 		GameObjectGenerator.generateRuntimeObjects(this);
 		addCycles(1);
 		updateDeadObjects();
-		if(player.hasArrived()) {
-			endTime = System.currentTimeMillis() - startTime;
+		if(player.hasArrived() && System.currentTimeMillis() - startTime < getRecord()) {
+			endTime = System.currentTimeMillis() - startTime; // xd
 			saveRecord();
 		}
 	}
