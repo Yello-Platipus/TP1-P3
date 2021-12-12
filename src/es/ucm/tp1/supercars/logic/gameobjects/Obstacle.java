@@ -44,10 +44,6 @@ public class Obstacle extends GameObject{
 		return true;
 	}
 
-	public boolean receiveExplosion(){
-		die();
-		return true;
-	}
 
 	@Override
 	public void onEnter() {
